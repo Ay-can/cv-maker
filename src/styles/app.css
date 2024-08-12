@@ -1,0 +1,11 @@
+#root {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 48px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Courier New", Courier, monospace;
+}

@@ -1,0 +1,9 @@
+.personal-info {
+  border: 2px solid black;
+  width: 400px;
+  height: 400px;
+}
+
+form {
+  display: grid;
+}

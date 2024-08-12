@@ -1,0 +1,14 @@
+.resume-container {
+  border: 2px solid black;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+header {
+  background-color: aquamarine;
+  height: 100px;
+  padding: 16px;
+}
