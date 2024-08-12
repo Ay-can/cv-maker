@@ -24,9 +24,14 @@ function App() {
     setPerson({ ...person, address: e.target.value });
   };
 
+  const handleCareer = (e) => {
+    setPerson({ ...person, career: e.target.value });
+  };
+
   const [person, setPerson] = useState({
     firstname: "john",
     lastname: "doe",
+    career: "Software Engineer",
     email: "demo@gmail.com",
     phone: "0512312311",
     address: "Amsterdam, Noord-Holland",
@@ -41,6 +46,7 @@ function App() {
         handleEmail={handleEmail}
         handlePhone={handlePhone}
         handleAddress={handleAddress}
+        handleCareer={handleCareer}
       />
       <Resume person={person} />
     </>

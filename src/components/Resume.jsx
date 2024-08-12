@@ -7,6 +7,7 @@ function Resume({ person }) {
         <h1>
           {person.firstname} {person.lastname}
         </h1>
+        <h2>{person.career}</h2>
         <div className="contact-info">
           <p>{person.email}</p>
           <p>{person.phone}</p>

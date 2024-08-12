@@ -2,7 +2,10 @@
   border: 2px solid black;
 }
 
-h1 {
+h1,
+h2 {
+  margin: 0;
+  margin-bottom: 16px;
   display: flex;
   justify-content: center;
 }

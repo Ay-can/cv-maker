@@ -7,9 +7,11 @@ function PersonalInfo({
   handleEmail,
   handlePhone,
   handleAddress,
+  handleCareer,
 }) {
   return (
     <div className="personal-info">
+      <h2>Personal Info</h2>
       <form>
         <label htmlFor="firstname">Firstname </label>
         <input
@@ -26,6 +28,15 @@ function PersonalInfo({
           id="lastname"
           value={person.lastname}
           onChange={handleLastName}
+        ></input>
+
+        <label htmlFor="career">Career </label>
+        <input
+          type="text"
+          name="career"
+          id="career"
+          value={person.career}
+          onChange={handleCareer}
         ></input>
 
         <label htmlFor="email">Email </label>
