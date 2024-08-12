@@ -1,10 +1,17 @@
 import "../styles/personalInfo.css";
 
-function PersonalInfo({ person, handleFirstName, handleLastName }) {
+function PersonalInfo({
+  person,
+  handleFirstName,
+  handleLastName,
+  handleEmail,
+  handlePhone,
+  handleAddress,
+}) {
   return (
     <div className="personal-info">
       <form>
-        <label htmlFor="firstname">Firstname: </label>
+        <label htmlFor="firstname">Firstname </label>
         <input
           type="text"
           name="firstname"
@@ -21,12 +28,13 @@ function PersonalInfo({ person, handleFirstName, handleLastName }) {
           onChange={handleLastName}
         ></input>
 
-        <label htmlFor="email">Lastname </label>
+        <label htmlFor="email">Email </label>
         <input
           type="email"
           name="email"
           id="email"
           value={person.email}
+          onChange={handleEmail}
         ></input>
 
         <label htmlFor="phone-number">Phone Number </label>
@@ -35,6 +43,7 @@ function PersonalInfo({ person, handleFirstName, handleLastName }) {
           name="email"
           id="email"
           value={person.phone}
+          onChange={handlePhone}
         ></input>
 
         <label htmlFor="address">Address </label>
@@ -43,6 +52,7 @@ function PersonalInfo({ person, handleFirstName, handleLastName }) {
           name="address"
           id="address"
           value={person.address}
+          onChange={handleAddress}
         ></input>
       </form>
     </div>

@@ -16,6 +16,14 @@ function App() {
     setPerson({ ...person, email: e.target.value });
   };
 
+  const handlePhone = (e) => {
+    setPerson({ ...person, phone: e.target.value });
+  };
+
+  const handleAddress = (e) => {
+    setPerson({ ...person, address: e.target.value });
+  };
+
   const [person, setPerson] = useState({
     firstname: "john",
     lastname: "doe",
@@ -31,6 +39,8 @@ function App() {
         handleFirstName={handleFirstName}
         handleLastName={handleLastName}
         handleEmail={handleEmail}
+        handlePhone={handlePhone}
+        handleAddress={handleAddress}
       />
       <Resume person={person} />
     </>
