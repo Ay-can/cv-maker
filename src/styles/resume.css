@@ -12,3 +12,9 @@ header {
   height: 100px;
   padding: 16px;
 }
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
