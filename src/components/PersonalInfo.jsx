@@ -1,14 +1,6 @@
 import "../styles/personalInfo.css";
 
-function PersonalInfo({
-  person,
-  handleFirstName,
-  handleLastName,
-  handleEmail,
-  handlePhone,
-  handleAddress,
-  handleCareer,
-}) {
+function PersonalInfo({ person, handleForm }) {
   return (
     <div className="personal-info-container">
       <div className="personal-info">
@@ -20,7 +12,7 @@ function PersonalInfo({
             name="firstname"
             id="firstname"
             value={person.firstname}
-            onChange={handleFirstName}
+            onChange={handleForm}
           />
           <label htmlFor="lastname">Lastname </label>
           <input
@@ -28,7 +20,7 @@ function PersonalInfo({
             name="lastname"
             id="lastname"
             value={person.lastname}
-            onChange={handleLastName}
+            onChange={handleForm}
           ></input>
 
           <label htmlFor="career">Career </label>
@@ -37,7 +29,7 @@ function PersonalInfo({
             name="career"
             id="career"
             value={person.career}
-            onChange={handleCareer}
+            onChange={handleForm}
           ></input>
 
           <label htmlFor="email">Email </label>
@@ -46,16 +38,16 @@ function PersonalInfo({
             name="email"
             id="email"
             value={person.email}
-            onChange={handleEmail}
+            onChange={handleForm}
           ></input>
 
           <label htmlFor="phone-number">Phone Number </label>
           <input
-            type="email"
-            name="email"
-            id="email"
+            type="tel"
+            name="phone"
+            id="phone"
             value={person.phone}
-            onChange={handlePhone}
+            onChange={handleForm}
           ></input>
 
           <label htmlFor="address">Address </label>
@@ -64,7 +56,7 @@ function PersonalInfo({
             name="address"
             id="address"
             value={person.address}
-            onChange={handleAddress}
+            onChange={handleForm}
           ></input>
         </form>
       </div>
