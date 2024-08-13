@@ -1,0 +1,39 @@
+.education-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40px;
+}
+
+h3 {
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.education {
+  width: 400px;
+  height: 300px;
+  padding: 32px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+}
+
+.education-block {
+  display: grid;
+  grid-template-columns: 40% 40%;
+  justify-content: center;
+  margin-left: 60px;
+}
+
+.education-date-location > *,
+.education-school-degree > * {
+  margin: 3px;
+}
+
+form {
+  display: grid;
+}
+
+.school {
+  font-weight: 700;
+  font-size: 1.2rem;
+}

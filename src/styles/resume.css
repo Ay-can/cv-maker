@@ -1,11 +1,17 @@
 .resume-container {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  grid-row: span 2;
 }
 
 h1,
 h2 {
   margin: 0;
   margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+h3 {
   display: flex;
   justify-content: center;
 }
