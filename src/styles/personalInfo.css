@@ -1,8 +1,15 @@
+.personal-info-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
 .personal-info {
-  border: 2px solid black;
   width: 400px;
   height: 300px;
   padding: 32px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
 }
 
 form {
