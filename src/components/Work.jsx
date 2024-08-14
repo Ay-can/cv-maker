@@ -1,7 +1,10 @@
+import "../styles/work.css";
+
 function Work({ work, handleWorkForm }) {
   return (
     <div className="work-experience-container">
       <div className="work-experience">
+        <h2>Work Experience</h2>
         <form action="">
           <label htmlFor="company">Company</label>
           <input

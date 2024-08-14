@@ -1,0 +1,23 @@
+.work-experience {
+  width: 400px;
+  height: 300px;
+  padding: 32px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+}
+
+.work-experience-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40px;
+}
+
+.work-experience-block {
+  display: flex;
+  justify-content: center;
+}
+
+.work-date-location > *,
+.work-company-description > * {
+  margin: 6px;
+}
