@@ -17,6 +17,10 @@
   justify-content: center;
 }
 
+.work-experience-block > * {
+  flex: 1;
+}
+
 .work-date-location > *,
 .work-company-description > * {
   margin: 6px;

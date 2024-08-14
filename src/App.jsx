@@ -5,6 +5,7 @@ import EducationForm from "./components/EducationForm";
 import WorkForm from "./components/WorkForm";
 import WorkSection from "./components/WorkSection";
 import "./styles/app.css";
+import EducationSection from "./components/EducationSection";
 
 function App() {
   const [workExperiences, setWorkExperiences] = useState([
@@ -30,6 +31,25 @@ function App() {
     },
   ]);
 
+  const [studies, setStudies] = useState([
+    {
+      id: crypto.randomUUID(),
+      school: "Harvard University",
+      degree: "Computer Science",
+      startYear: 2020,
+      endYear: 2024,
+      location: "Massachusetts",
+    },
+    {
+      id: crypto.randomUUID(),
+      school: "Harvard University",
+      degree: "Computer Science",
+      startYear: 2020,
+      endYear: 2024,
+      location: "Massachusetts",
+    },
+  ]);
+
   const handlePersonForm = (e) => {
     setPerson({ ...person, [e.target.name]: e.target.value });
   };
@@ -44,7 +64,6 @@ function App() {
 
   const saveWorkExperience = () => {
     setWorkExperiences([...workExperiences, { ...work }]);
-    console.log(workExperiences);
   };
 
   const [person, setPerson] = useState({
@@ -76,21 +95,21 @@ function App() {
 
   return (
     <>
-      {/* <PersonalInfoForm person={person} handleForm={handlePersonForm} /> */}
-      {/* <Resume person={person} education={education} work={work} /> */}
-      <Resume person={person}>
-        <WorkSection workExperiences={workExperiences} />
-      </Resume>
-      {/* <EducationForm
+      <PersonalInfoForm person={person} handleForm={handlePersonForm} />
+      <EducationForm
         education={education}
         handleEducationForm={handleEducationForm}
-      /> */}
-      {/* <WorkForm
+      />
+      <WorkForm
         work={work}
-        workExperiences={workExperiences}
         handleWorkForm={handleWorkForm}
         handleClick={saveWorkExperience}
-      /> */}
+      />
+
+      <Resume person={person}>
+        <EducationSection studies={studies} />
+        <WorkSection workExperiences={workExperiences} />
+      </Resume>
     </>
   );
 }
