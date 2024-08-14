@@ -1,6 +1,6 @@
 import "../styles/personalInfo.css";
 
-function PersonalInfo({ person, handleForm }) {
+function PersonalInfoForm({ person, handleForm }) {
   return (
     <div className="personal-info-container">
       <div className="personal-info">
@@ -64,4 +64,4 @@ function PersonalInfo({ person, handleForm }) {
   );
 }
 
-export default PersonalInfo;
+export default PersonalInfoForm;

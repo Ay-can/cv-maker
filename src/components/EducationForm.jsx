@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../styles/education.css";
 
-function Education({ education, handleEducationForm }) {
+function EducationForm({ education, handleEducationForm }) {
   return (
     <div className="education-container">
       <div className="education">
@@ -53,4 +53,4 @@ function Education({ education, handleEducationForm }) {
   );
 }
 
-export default Education;
+export default EducationForm;

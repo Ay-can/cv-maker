@@ -1,6 +1,6 @@
 import "../styles/resume.css";
 
-function Resume({ person, education, work }) {
+function Resume({ person, education, work, workExperiences, children }) {
   return (
     <div className="resume-container">
       <header>
@@ -14,8 +14,9 @@ function Resume({ person, education, work }) {
           <p>{person.address}</p>
         </div>
       </header>
+      {children}
 
-      <div className="education-section">
+      {/* <div className="education-section">
         <h3>Education</h3>
         <div className="education-block">
           <div className="education-date-location">
@@ -38,7 +39,7 @@ function Resume({ person, education, work }) {
             <p>
               {work.startDate} - {work.endDate}
             </p>
-            <p>{work.location}</p>
+            <p>{work.location} </p>
           </div>
           <div className="work-company-description">
             <p>{work.company}</p>
@@ -46,7 +47,7 @@ function Resume({ person, education, work }) {
             <p className="description">{work.description}</p>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

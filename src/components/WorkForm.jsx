@@ -1,6 +1,6 @@
 import "../styles/work.css";
 
-function Work({ work, handleWorkForm }) {
+function WorkForm({ work, handleWorkForm, handleClick }) {
   return (
     <div className="work-experience-container">
       <div className="work-experience">
@@ -54,10 +54,13 @@ function Work({ work, handleWorkForm }) {
             value={work.description}
             onChange={handleWorkForm}
           />
+          <button type="button" onClick={handleClick}>
+            Save
+          </button>
         </form>
       </div>
     </div>
   );
 }
 
-export default Work;
+export default WorkForm;
