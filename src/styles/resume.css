@@ -4,6 +4,15 @@
   grid-column: 2;
 }
 
+.contact-info > * {
+  margin: 0 0px;
+  flex: 1;
+}
+
+.phone {
+  width: fit-content;
+}
+
 h1,
 h2 {
   margin: 0;
@@ -18,13 +27,18 @@ h3 {
 }
 
 header {
-  background-color: aquamarine;
-  height: 100px;
-  padding: 48px;
+  height: 120px;
+  padding: 32px;
+  border-bottom: black 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .contact-info {
+  width: inherit;
   display: flex;
-  justify-content: center;
-  gap: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
 }

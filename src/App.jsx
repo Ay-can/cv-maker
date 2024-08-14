@@ -72,7 +72,7 @@ function App() {
     career: "Software Engineer",
     email: "demo@gmail.com",
     phone: "0512312311",
-    address: "Amsterdam, Noord-Holland",
+    address: "Amsterdam",
   });
 
   const [education, setEducation] = useState({

@@ -9,9 +9,9 @@ function Resume({ person, education, work, workExperiences, children }) {
         </h1>
         <h2>{person.career}</h2>
         <div className="contact-info">
-          <p>{person.email}</p>
-          <p>{person.phone}</p>
-          <p>{person.address}</p>
+          <span>{person.email}</span>
+          <span className="phone">{person.phone}</span>
+          <span>{person.address}</span>
         </div>
       </header>
       {children}
