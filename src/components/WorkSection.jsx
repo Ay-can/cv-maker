@@ -2,7 +2,7 @@ function WorkSection({ workExperiences }) {
   return (
     <>
       <div className="work-experience-section">
-        <h3>Work Experience</h3>
+        <h2 className="section-header">Work Experience</h2>
         {workExperiences.map((experience) => {
           return (
             <div key={experience.id} className="work-experience-block">

@@ -1,12 +1,19 @@
+.education-section {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
 .education-container {
   display: flex;
   justify-content: flex-end;
   margin-top: 40px;
 }
 
-h3 {
-  justify-content: center;
-  margin-bottom: 20px;
+.section-header {
+  justify-content: flex-start;
+  margin: 8px;
 }
 
 .education {
@@ -18,10 +25,12 @@ h3 {
 }
 
 .education-block {
-  display: grid;
+  /* display: grid;
   grid-template-columns: 40% 40%;
-  justify-content: center;
-  margin-left: 60px;
+  justify-content: center; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .education-date-location > *,
@@ -36,4 +45,25 @@ form {
 .school {
   font-weight: 700;
   font-size: 1.2rem;
+}
+
+.education-info {
+  flex: 1;
+  margin: 8px;
+}
+
+.school-year-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.school-year-container > *,
+.degree-container > * {
+  margin: 0;
+}
+
+.study-school {
+  font-weight: 500;
+  font-size: 1.3rem;
 }

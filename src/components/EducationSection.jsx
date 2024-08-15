@@ -1,19 +1,22 @@
 function EducationSection({ studies }) {
   return (
     <div className="education-section">
-      <h3>Education</h3>
+      <h2 className="section-header">Education</h2>
       {studies.map((study) => {
         return (
           <div key={study.id} className="education-block">
-            <div className="education-date-location">
-              <p>
-                {study.startYear} - {study.endYear}
-              </p>
-              <p>{study.location}</p>
-            </div>
-            <div className="education-school-degree">
-              <p className="school">{study.school}</p>
-              <p>{study.degree}</p>
+            <div className="education-info">
+              <div>
+                <div className="school-year-container">
+                  <p className="study-school">{study.school}</p>
+                  <p>
+                    {study.startYear} - {study.endYear} | {study.location}
+                  </p>
+                </div>
+                <div className="degree-container">
+                  <p>{study.degree}</p>
+                </div>
+              </div>
             </div>
           </div>
         );
