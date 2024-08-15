@@ -1,3 +1,5 @@
+import "../styles/skills.css";
+
 function SkillsForm({ skillsForm, handleSkillsForm }) {
   return (
     <div className="skills-container">

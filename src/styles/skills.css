@@ -4,7 +4,12 @@
 }
 
 .skill > p {
-  margin: 10px;
+  margin: 8px 0px;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .skill-title {
