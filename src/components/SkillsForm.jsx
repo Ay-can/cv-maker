@@ -1,7 +1,7 @@
 function SkillsForm({ skillsForm, handleSkillsForm }) {
   return (
     <div className="skills-container">
-      <div className="skills card">
+      <div className="card">
         <h2>Skills</h2>
         <form action="">
           <label htmlFor="programming-languages">Programming Languages</label>
@@ -12,7 +12,7 @@ function SkillsForm({ skillsForm, handleSkillsForm }) {
             value={skillsForm["programming-languages"]}
             onChange={handleSkillsForm}
           />
-          <label htmlFor="libraries-frameworks">Degree</label>
+          <label htmlFor="libraries-frameworks">Libraries/Frameworks</label>
           <input
             type="text"
             name="libraries-frameworks"

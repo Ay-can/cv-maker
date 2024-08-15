@@ -5,6 +5,8 @@ import EducationForm from "./components/EducationForm";
 import WorkForm from "./components/WorkForm";
 import SkillsForm from "./components/SkillsForm";
 import WorkSection from "./components/WorkSection";
+import SkillsSection from "./components/SkillsSection";
+
 import "./styles/app.css";
 import EducationSection from "./components/EducationSection";
 
@@ -122,6 +124,7 @@ function App() {
       <Resume person={person}>
         <EducationSection studies={studies} />
         <WorkSection workExperiences={workExperiences} />
+        <SkillsSection skills={skillsForm} />
       </Resume>
     </>
   );

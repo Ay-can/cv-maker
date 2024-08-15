@@ -1,0 +1,13 @@
+.skill {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.skill > p {
+  margin: 10px;
+}
+
+.skill-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
