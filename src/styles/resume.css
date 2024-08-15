@@ -13,12 +13,28 @@
   width: fit-content;
 }
 
-h1,
-h2 {
+.resume-title {
   margin: 0;
-  margin-bottom: 16px;
+  font-size: 2.6rem;
+  font-weight: 400;
+}
+
+.resume-career {
+  margin: 0;
+  margin-bottom: 4px;
+  font-size: 1.4rem;
+}
+
+.resume-career,
+.resume-title {
   display: flex;
   justify-content: center;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
 }
 
 h3 {
@@ -40,5 +56,22 @@ header {
   width: inherit;
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 6px;
+}
+
+.contact-info > *,
+.contact-links > * {
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link {
+  color: black;
+}
+
+a:hover {
+  color: #dc143c;
 }

@@ -67,8 +67,8 @@ function App() {
   };
 
   const [person, setPerson] = useState({
-    firstname: "john",
-    lastname: "doe",
+    firstname: "John",
+    lastname: "Doe",
     career: "Software Engineer",
     email: "demo@gmail.com",
     phone: "0512312311",
