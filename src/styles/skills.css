@@ -4,7 +4,7 @@
 }
 
 .skill > p {
-  margin: 8px 0px;
+  margin: 3px 0px;
 }
 
 .skills-container {
@@ -13,6 +13,6 @@
 }
 
 .skill-title {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1.1rem;
 }

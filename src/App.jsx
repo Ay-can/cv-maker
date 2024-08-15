@@ -9,6 +9,8 @@ import SkillsSection from "./components/SkillsSection";
 
 import "./styles/app.css";
 import EducationSection from "./components/EducationSection";
+import ProjectForm from "./components/ProjectForm";
+import ProjectSection from "./components/ProjectSection";
 
 function App() {
   const [workExperiences, setWorkExperiences] = useState([
@@ -53,6 +55,16 @@ function App() {
     },
   ]);
 
+  const [projects, setProjects] = useState([
+    {
+      id: crypto.randomUUID(),
+      name: "Cv-maker",
+      link: "Computer Science",
+      stack: "reactjs",
+      description: "A fun little project to learn more about react",
+    },
+  ]);
+
   const [skillsForm, setSkillsForm] = useState({
     "programming-languages": "Javascript, Go, Python, Html/Css",
     "libraries-frameworks": "Reactjs, Webpack, Asp.net Core, Django",
@@ -76,9 +88,25 @@ function App() {
     setSkillsForm({ ...skillsForm, [e.target.name]: e.target.value });
   };
 
+  const handleProjectForm = (e) => {
+    setProjectForm({ ...projectForm, [e.target.name]: e.target.value });
+  };
+
   const saveWorkExperience = () => {
     setWorkExperiences([...workExperiences, { ...work }]);
   };
+
+  const saveProjects = () => {
+    setProjects([...projects, { ...projectForm }]);
+  };
+
+  const [projectForm, setProjectForm] = useState({
+    name: "Cv-maker",
+    link: "www.github.com/ay-can/cv-maker",
+    stack: "reactjs",
+    description:
+      "A fun little project first react project to learn about components, state, props and much more",
+  });
 
   const [person, setPerson] = useState({
     firstname: "John",
@@ -120,11 +148,17 @@ function App() {
         handleClick={saveWorkExperience}
       />
       <SkillsForm skillsForm={skillsForm} handleSkillsForm={handleSkillsForm} />
+      <ProjectForm
+        projectForm={projectForm}
+        handleProjectForm={handleProjectForm}
+        saveProjects={saveProjects}
+      />
 
       <Resume person={person}>
         <EducationSection studies={studies} />
         <WorkSection workExperiences={workExperiences} />
         <SkillsSection skills={skillsForm} />
+        <ProjectSection projects={projects} />
       </Resume>
     </>
   );
