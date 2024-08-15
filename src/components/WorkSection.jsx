@@ -6,16 +6,16 @@ function WorkSection({ workExperiences }) {
         {workExperiences.map((experience) => {
           return (
             <div key={experience.id} className="work-experience-block">
-              <div className="work-date-location">
+              <div className="work-info-container">
+                <p className="company-position">
+                  {experience.company} | {experience.position}
+                </p>
                 <p>
                   {experience.startDate} - {experience.endDate}
                 </p>
-                <p>{experience.location} </p>
               </div>
-              <div className="work-company-description">
-                <p>{experience.company}</p>
-                <p>{experience.position}</p>
-                <p className="description">{experience.description}</p>
+              <div className="work-description-container">
+                <p>{experience.description}</p>
               </div>
             </div>
           );
