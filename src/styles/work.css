@@ -8,6 +8,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin-bottom: 10px;
 }
 
 .work-experience-block > * {
@@ -27,6 +28,10 @@
 
 .work-info-container > p {
   margin: 2px 0px;
+}
+
+.work-description {
+  padding-left: 6px;
 }
 
 .work-description-container > p {

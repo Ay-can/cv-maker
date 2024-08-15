@@ -1,3 +1,5 @@
+import "../styles/project.css";
+
 function ProjectSection({ projects }) {
   return (
     <>

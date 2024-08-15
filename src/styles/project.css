@@ -1,0 +1,21 @@
+.project-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-description {
+  margin: 0px;
+  padding-left: 6px;
+}
+
+.project-info {
+  font-weight: 500;
+  font-size: 1.1rem;
+  margin: 0px;
+}
