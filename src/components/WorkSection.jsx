@@ -15,7 +15,7 @@ function WorkSection({ workExperiences }) {
                 </p>
               </div>
               <div className="work-description-container">
-                <p>{experience.description}</p>
+                <p className="work-description">{experience.description}</p>
               </div>
             </div>
           );

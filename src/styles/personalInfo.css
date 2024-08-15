@@ -3,15 +3,6 @@
   justify-content: flex-end;
   margin-top: 40px;
 }
-
-.personal-info {
-  width: 400px;
-  height: 300px;
-  padding: 32px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  border-radius: 10px;
-}
-
 form {
   display: grid;
 }

@@ -16,14 +16,6 @@
   margin: 8px 0px;
 }
 
-.education {
-  width: 400px;
-  height: 300px;
-  padding: 32px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  border-radius: 10px;
-}
-
 .education-block {
   /* display: grid;
   grid-template-columns: 40% 40%;
@@ -64,6 +56,6 @@ form {
 }
 
 .study-school {
-  font-weight: 500;
-  font-size: 1.3rem;
+  font-weight: 600;
+  font-size: 1.1rem;
 }

@@ -4,7 +4,7 @@ import "../styles/education.css";
 function EducationForm({ education, handleEducationForm }) {
   return (
     <div className="education-container">
-      <div className="education">
+      <div className="card">
         <h2>Education</h2>
         <form action="">
           <label htmlFor="school">School</label>

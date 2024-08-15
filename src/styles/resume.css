@@ -76,3 +76,11 @@ a:link {
 a:hover {
   color: #dc143c;
 }
+
+.card {
+  width: 450px;
+  height: 350px;
+  padding: 32px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+}

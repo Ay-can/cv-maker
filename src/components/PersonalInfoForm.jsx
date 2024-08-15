@@ -3,7 +3,7 @@ import "../styles/personalInfo.css";
 function PersonalInfoForm({ person, handleForm }) {
   return (
     <div className="personal-info-container">
-      <div className="personal-info">
+      <div className="card">
         <h2>Personal Info</h2>
         <form>
           <label htmlFor="firstname">Firstname </label>

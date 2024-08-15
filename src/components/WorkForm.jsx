@@ -3,7 +3,7 @@ import "../styles/work.css";
 function WorkForm({ work, handleWorkForm, handleClick }) {
   return (
     <div className="work-experience-container">
-      <div className="work-experience">
+      <div className="card">
         <h2>Work Experience</h2>
         <form action="">
           <label htmlFor="company">Company</label>
@@ -27,7 +27,7 @@ function WorkForm({ work, handleWorkForm, handleClick }) {
             type="text"
             name="start-date"
             id="start-date"
-            value={work.startDate}
+            value={work["start-date"]}
             onChange={handleWorkForm}
           />
           <label htmlFor="end-date">End Date</label>
@@ -35,7 +35,7 @@ function WorkForm({ work, handleWorkForm, handleClick }) {
             type="text"
             name="end-date"
             id="end-date"
-            value={work.endDate}
+            value={work["end-date"]}
             onChange={handleWorkForm}
           />
           <label htmlFor="location">Location</label>

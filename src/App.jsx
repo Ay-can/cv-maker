@@ -3,6 +3,7 @@ import PersonalInfoForm from "./components/PersonalInfoForm";
 import Resume from "./components/Resume";
 import EducationForm from "./components/EducationForm";
 import WorkForm from "./components/WorkForm";
+import SkillsForm from "./components/SkillsForm";
 import WorkSection from "./components/WorkSection";
 import "./styles/app.css";
 import EducationSection from "./components/EducationSection";
@@ -17,7 +18,7 @@ function App() {
       endDate: "present",
       location: "Zurich",
       description:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore fugit magnam laudantium omnis similique iure harum velit at quas aperiam.",
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, alias repellat eos modi commodi nihil illum accusantium incidunt esse porro!",
     },
     {
       id: crypto.randomUUID(),
@@ -27,7 +28,7 @@ function App() {
       endDate: "present",
       location: "Zurich",
       description:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore fugit magnam laudantium omnis similique iure harum velit at quas aperiam.",
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint, omnis. At, illum. Dignissimos nam ea aperiam voluptate accusantium culpa eaque!",
     },
   ]);
 
@@ -50,6 +51,13 @@ function App() {
     },
   ]);
 
+  const [skillsForm, setSkillsForm] = useState({
+    "programming-languages": "Javascript, Go, Python, Html/Css",
+    "libraries-frameworks": "Reactjs, Webpack, Asp.net Core, Django",
+    "tools-platforms": "Git, Bash, Linux, Vim",
+    databases: "Mysql, Mysqlserver, Postgresql",
+  });
+
   const handlePersonForm = (e) => {
     setPerson({ ...person, [e.target.name]: e.target.value });
   };
@@ -60,6 +68,10 @@ function App() {
 
   const handleWorkForm = (e) => {
     setWork({ ...work, [e.target.name]: e.target.value });
+  };
+
+  const handleSkillsForm = (e) => {
+    setSkillsForm({ ...skillsForm, [e.target.name]: e.target.value });
   };
 
   const saveWorkExperience = () => {
@@ -105,6 +117,7 @@ function App() {
         handleWorkForm={handleWorkForm}
         handleClick={saveWorkExperience}
       />
+      <SkillsForm skillsForm={skillsForm} handleSkillsForm={handleSkillsForm} />
 
       <Resume person={person}>
         <EducationSection studies={studies} />
