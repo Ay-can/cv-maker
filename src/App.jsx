@@ -38,7 +38,7 @@ function App() {
 
   const [studies, setStudies] = useState([
     {
-      id: crypto.randomUUID(),
+      id: 1,
       school: "Harvard University",
       degree: "Computer Science",
       startYear: 2020,
@@ -46,8 +46,8 @@ function App() {
       location: "Massachusetts",
     },
     {
-      id: crypto.randomUUID(),
-      school: "Harvard University",
+      id: 2,
+      school: "MIT",
       degree: "Computer Science",
       startYear: 2020,
       endYear: 2024,
@@ -59,7 +59,7 @@ function App() {
     {
       id: crypto.randomUUID(),
       name: "Cv-maker",
-      link: "Computer Science",
+      link: "github.com/ay-can/cv-maker",
       stack: "reactjs",
       description: "A fun little project to learn more about react",
     },
@@ -93,16 +93,23 @@ function App() {
   };
 
   const saveWorkExperience = () => {
-    setWorkExperiences([...workExperiences, { ...work }]);
+    setWorkExperiences([
+      ...workExperiences,
+      { ...work, id: crypto.randomUUID() },
+    ]);
   };
 
   const saveProjects = () => {
-    setProjects([...projects, { ...projectForm }]);
+    setProjects([...projects, { ...projectForm, id: crypto.randomUUID() }]);
+  };
+
+  const addStudy = () => {
+    setStudies([...studies, { ...education, id: crypto.randomUUID() }]);
   };
 
   const [projectForm, setProjectForm] = useState({
     name: "Cv-maker",
-    link: "www.github.com/ay-can/cv-maker",
+    link: "github.com/ay-can/cv-maker",
     stack: "reactjs",
     description:
       "A fun little project first react project to learn about components, state, props and much more",
@@ -128,8 +135,8 @@ function App() {
   const [work, setWork] = useState({
     company: "Google",
     position: "Software Engineer",
-    startDate: "12-03-2024",
-    endDate: "present",
+    "start-date": "12-03-2024",
+    "end-date": "present",
     location: "Zurich",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore fugit magnam laudantium omnis similique iure harum velit at quas aperiam.",
@@ -141,6 +148,7 @@ function App() {
       <EducationForm
         education={education}
         handleEducationForm={handleEducationForm}
+        addStudy={addStudy}
       />
       <WorkForm
         work={work}

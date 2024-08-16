@@ -2,9 +2,14 @@ function EducationSection({ studies }) {
   return (
     <div className="education-section">
       <h2 className="section-header">Education</h2>
-      {studies.map((study) => {
+      {studies.map((study, index) => {
         return (
-          <div key={study.id} className="education-block">
+          <div
+            key={study.id}
+            className="education-block"
+            data-index={index}
+            onClick={(e) => console.log(e)}
+          >
             <div className="education-info">
               <div>
                 <div className="school-year-container">

@@ -4,7 +4,7 @@ function ProjectSection({ projects }) {
   return (
     <>
       <div className="project-section">
-        <h2 className="section-header">Project</h2>
+        <h2 className="section-header">Projects</h2>
         {projects.map((project) => {
           return (
             <div key={project.id} className="project-block">

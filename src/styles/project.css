@@ -6,7 +6,9 @@
 .project-info-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: end;
+  margin-bottom: 6px;
+  height: 30px;
 }
 
 .project-description {
@@ -18,4 +20,13 @@
   font-weight: 500;
   font-size: 1.1rem;
   margin: 0px;
+}
+
+.project-block {
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+
+.project-container {
+  grid-column: 1;
 }

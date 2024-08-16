@@ -1,6 +1,8 @@
+import "../styles/project.css";
+
 function ProjectForm({ projectForm, handleProjectForm, saveProjects }) {
   return (
-    <div className="education-container">
+    <div className="project-container">
       <div className="card">
         <h2>Projects</h2>
         <form action="" id="project-form">

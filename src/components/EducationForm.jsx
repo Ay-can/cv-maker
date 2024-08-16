@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../styles/education.css";
 
-function EducationForm({ education, handleEducationForm }) {
+function EducationForm({ education, handleEducationForm, addStudy }) {
   return (
     <div className="education-container">
       <div className="card">
@@ -47,6 +47,9 @@ function EducationForm({ education, handleEducationForm }) {
             value={education.location}
             onChange={handleEducationForm}
           />
+          <button type="button" onClick={addStudy}>
+            Add
+          </button>
         </form>
       </div>
     </div>
