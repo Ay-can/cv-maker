@@ -1,7 +1,6 @@
 function EducationSection({ studies, updateStudy }) {
   const handleInput = (e, studyId, field) => {
     const updatedValue = e.target.textContent;
-    console.log(studies);
     updateStudy(studyId, field, updatedValue);
   };
 

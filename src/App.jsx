@@ -11,6 +11,7 @@ import "./styles/app.css";
 import EducationSection from "./components/EducationSection";
 import ProjectForm from "./components/ProjectForm";
 import ProjectSection from "./components/ProjectSection";
+import PersonalInfoSection from "./components/PersonalInfoSection";
 
 function App() {
   const [workExperiences, setWorkExperiences] = useState([
@@ -170,7 +171,8 @@ function App() {
         saveProjects={saveProjects}
       />
 
-      <Resume person={person}>
+      <Resume>
+        <PersonalInfoSection person={person} />
         <EducationSection studies={studies} updateStudy={updateStudy} />
         <WorkSection workExperiences={workExperiences} />
         <SkillsSection skills={skillsForm} />
