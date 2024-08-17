@@ -12,7 +12,6 @@ function EducationForm({ education, handleEducationForm, addStudy }) {
             type="text"
             name="school"
             id="school"
-            value={education.school}
             onChange={handleEducationForm}
           />
           <label htmlFor="degree">Degree</label>
@@ -20,7 +19,6 @@ function EducationForm({ education, handleEducationForm, addStudy }) {
             type="text"
             name="degree"
             id="degree"
-            value={education.degree}
             onChange={handleEducationForm}
           />
           <label htmlFor="start-date">Start Date</label>
@@ -28,7 +26,6 @@ function EducationForm({ education, handleEducationForm, addStudy }) {
             type="num"
             name="start-year"
             id="start-year"
-            value={education.startYear}
             onChange={handleEducationForm}
           />
           <label htmlFor="start-date">End Date</label>
@@ -36,7 +33,6 @@ function EducationForm({ education, handleEducationForm, addStudy }) {
             type="num"
             name="end-year"
             id="end-year"
-            value={education.endYear}
             onChange={handleEducationForm}
           />
           <label htmlFor="location">Location</label>
@@ -44,7 +40,6 @@ function EducationForm({ education, handleEducationForm, addStudy }) {
             type="text"
             name="location"
             id="location"
-            value={education.location}
             onChange={handleEducationForm}
           />
           <button type="button" onClick={addStudy}>

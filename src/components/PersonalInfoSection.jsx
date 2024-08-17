@@ -1,18 +1,49 @@
 import "../styles/resume.css";
 
-function PersonalInfoSection({ person }) {
+function PersonalInfoSection({ person, updatePersonalInfo }) {
   return (
     <header>
-      <p className="resume-title">
-        {person.firstname} {person.lastname}
+      <p
+        contentEditable
+        suppressContentEditableWarning
+        onBlur={(e) => updatePersonalInfo("fullname", e.target.textContent)}
+        className="resume-title"
+      >
+        {person.fullname}
       </p>
-      <p className="resume-career">{person.career}</p>
+      <p
+        contentEditable
+        suppressContentEditableWarning
+        onBlur={(e) => updatePersonalInfo("career", e.target.textContent)}
+        className="resume-career"
+      >
+        {person.career}
+      </p>
       <div className="contact-info">
         <span>
-          <a>{person.email}</a>
+          <a
+            contentEditable
+            suppressContentEditableWarning
+            onBlur={(e) => updatePersonalInfo("email", e.target.textContent)}
+          >
+            {person.email}
+          </a>
         </span>
-        <span className="phone">{person.phone}</span>
-        <span>{person.address}</span>
+        <span
+          contentEditable
+          suppressContentEditableWarning
+          onBlur={(e) => updatePersonalInfo("phone", e.target.textContent)}
+          className="phone"
+        >
+          {person.phone}
+        </span>
+        <span
+          contentEditable
+          suppressContentEditableWarning
+          onBlur={(e) => updatePersonalInfo("address", e.target.textContent)}
+        >
+          {person.address}
+        </span>
       </div>
       <div className="contact-links">
         <span>

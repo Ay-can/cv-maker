@@ -116,6 +116,10 @@ function App() {
     setStudies([...studies, { ...education, id: crypto.randomUUID() }]);
   };
 
+  const updatePersonalInfo = (field, value) => {
+    setPerson({ ...person, [field]: value });
+  };
+
   const [projectForm, setProjectForm] = useState({
     name: "Cv-maker",
     link: "github.com/ay-can/cv-maker",
@@ -125,8 +129,7 @@ function App() {
   });
 
   const [person, setPerson] = useState({
-    firstname: "John",
-    lastname: "Doe",
+    fullname: "John",
     career: "Software Engineer",
     email: "demo@gmail.com",
     phone: "0512312311",
@@ -172,7 +175,10 @@ function App() {
       />
 
       <Resume>
-        <PersonalInfoSection person={person} />
+        <PersonalInfoSection
+          person={person}
+          updatePersonalInfo={updatePersonalInfo}
+        />
         <EducationSection studies={studies} updateStudy={updateStudy} />
         <WorkSection workExperiences={workExperiences} />
         <SkillsSection skills={skillsForm} />

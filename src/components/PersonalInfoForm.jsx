@@ -6,22 +6,14 @@ function PersonalInfoForm({ person, handleForm }) {
       <div className="card">
         <h2>Personal Info</h2>
         <form>
-          <label htmlFor="firstname">Firstname </label>
+          <label htmlFor="fullname">Fullname </label>
           <input
             type="text"
-            name="firstname"
-            id="firstname"
-            value={person.firstname}
+            name="fullname"
+            id="fullname"
+            value={person.fullname}
             onChange={handleForm}
           />
-          <label htmlFor="lastname">Lastname </label>
-          <input
-            type="text"
-            name="lastname"
-            id="lastname"
-            value={person.lastname}
-            onChange={handleForm}
-          ></input>
 
           <label htmlFor="career">Career </label>
           <input
