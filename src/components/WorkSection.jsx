@@ -1,4 +1,11 @@
-function WorkSection({ workExperiences }) {
+import "../styles/work.css";
+
+function WorkSection({ workExperiences, updateWorkExperiences }) {
+  const handleInput = (e, workId, field) => {
+    const updatedValue = e.target.textContent;
+    updateWorkExperiences(workId, field, updatedValue);
+  };
+
   return (
     <>
       <div className="work-experience-section">
@@ -7,15 +14,58 @@ function WorkSection({ workExperiences }) {
           return (
             <div key={experience.id} className="work-experience-block">
               <div className="work-info-container">
-                <p className="company-position">
-                  {experience.company} | {experience.position}
-                </p>
-                <p>
-                  {experience.startDate} - {experience.endDate}
-                </p>
+                <div className="company-position-container">
+                  <p
+                    contentEditable
+                    suppressContentEditableWarning
+                    onBlur={(e) => handleInput(e, experience.id, "company")}
+                  >
+                    {experience.company}
+                  </p>
+                  <p className="seperator"> | </p>
+                  <p
+                    contentEditable
+                    suppressContentEditableWarning
+                    onBlur={(e) => handleInput(e, experience.id, "position")}
+                  >
+                    {experience.position}
+                  </p>
+                </div>
+                <div className="date-container">
+                  <p
+                    contentEditable
+                    suppressContentEditableWarning
+                    onBlur={(e) => handleInput(e, experience.id, "startDate")}
+                  >
+                    {experience.startDate}
+                  </p>
+                  <p className="seperator"> - </p>
+                  <p
+                    contentEditable
+                    suppressContentEditableWarning
+                    onBlur={(e) => handleInput(e, experience.id, "endDate")}
+                  >
+                    {experience.endDate}
+                  </p>
+                  <p className="seperator"> | </p>
+                  <p
+                    contentEditable
+                    suppressContentEditableWarning
+                    onBlur={(e) => handleInput(e, experience.id, "location")}
+                  >
+                    {experience.location}
+                  </p>
+                </div>
               </div>
               <div className="work-description-container">
-                <p className="work-description">{experience.description}</p>
+                <p
+                  contentEditable
+                  suppressContentEditableWarning
+                  onBlur={(e) => handleInput(e, experience.id, "description")}
+                  className="work-description"
+                >
+                  {experience.description}
+                </p>
               </div>
             </div>
           );

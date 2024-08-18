@@ -20,16 +20,6 @@
   margin: 6px;
 }
 
-.work-info-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.work-info-container > p {
-  margin: 2px 0px;
-}
-
 .work-description {
   padding-left: 6px;
 }
@@ -38,7 +28,28 @@
   margin: 6px 0px;
 }
 
-.company-position {
+.company-position-container > * {
   font-weight: 600;
   font-size: 1.1rem;
+}
+
+.work-info-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.company-position-container,
+.date-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.company-position-container > *,
+.date-container > * {
+  margin: 0;
+}
+
+.seperator {
+  padding: 0px 3px;
 }

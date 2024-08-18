@@ -16,7 +16,7 @@ import PersonalInfoSection from "./components/PersonalInfoSection";
 function App() {
   const [workExperiences, setWorkExperiences] = useState([
     {
-      id: crypto.randomUUID(),
+      id: 1,
       company: "Google",
       position: "Software Engineer",
       startDate: "12-03-2024",
@@ -26,7 +26,7 @@ function App() {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, alias repellat eos modi commodi nihil illum accusantium incidunt esse porro!",
     },
     {
-      id: crypto.randomUUID(),
+      id: 2,
       company: "Google",
       position: "Software Engineer",
       startDate: "12-03-2024",
@@ -60,6 +60,16 @@ function App() {
     setStudies((prevStudies) =>
       prevStudies.map((study) =>
         study.id === studyId ? { ...study, [field]: value } : study
+      )
+    );
+  };
+
+  const updateWorkExperiences = (workId, field, value) => {
+    setWorkExperiences((prev) =>
+      prev.map((experience) =>
+        experience.id === workId
+          ? { ...experience, [field]: value }
+          : experience
       )
     );
   };
@@ -180,7 +190,10 @@ function App() {
           updatePersonalInfo={updatePersonalInfo}
         />
         <EducationSection studies={studies} updateStudy={updateStudy} />
-        <WorkSection workExperiences={workExperiences} />
+        <WorkSection
+          workExperiences={workExperiences}
+          updateWorkExperiences={updateWorkExperiences}
+        />
         <SkillsSection skills={skillsForm} />
         <ProjectSection projects={projects} />
       </Resume>

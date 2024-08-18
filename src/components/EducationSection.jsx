@@ -41,7 +41,7 @@ function EducationSection({ studies, updateStudy }) {
                 >
                   {study.startYear}
                 </p>
-                <span className="seperator">-</span>
+                <p className="seperator">-</p>
                 <p
                   contentEditable
                   suppressContentEditableWarning
@@ -49,7 +49,7 @@ function EducationSection({ studies, updateStudy }) {
                 >
                   {study.endYear}
                 </p>
-                <span className="seperator">|</span>
+                <p className="seperator">|</p>
                 <p
                   contentEditable
                   suppressContentEditableWarning
