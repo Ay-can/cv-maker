@@ -40,8 +40,15 @@ form {
 }
 
 .education-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   flex: 1;
-  margin: 8px;
+  margin: 0px 8px;
+}
+
+.school-degree > * {
+  margin: 0;
 }
 
 .school-year-container {
@@ -50,12 +57,17 @@ form {
   align-items: center;
 }
 
-.school-year-container > *,
-.degree-container > * {
-  margin: 0;
-}
-
 .study-school {
   font-weight: 600;
   font-size: 1.1rem;
+}
+
+.study-year-location {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.seperator {
+  padding: 4px;
 }
