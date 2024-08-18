@@ -1,32 +1,34 @@
+.project-block {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
 .project-section {
   display: flex;
   flex-direction: column;
 }
 
+.project-name-link-container {
+  display: flex;
+  align-items: center;
+}
+
+.project-name-link-container > p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
 .project-info-container {
   display: flex;
   justify-content: space-between;
-  align-items: end;
-  margin-bottom: 6px;
   height: 30px;
+  align-items: center;
 }
 
-.project-description {
-  margin: 0px;
+.project-description-container > * {
+  margin: 0;
   padding-left: 6px;
-}
-
-.project-info {
-  font-weight: 500;
-  font-size: 1.1rem;
-  margin: 0px;
-}
-
-.project-block {
-  margin-bottom: 10px;
-  padding-left: 10px;
-}
-
-.project-container {
-  grid-column: 1;
 }

@@ -74,6 +74,14 @@ function App() {
     );
   };
 
+  const updateProjects = (projectId, field, value) => {
+    setProjects((prevProjects) =>
+      prevProjects.map((project) =>
+        project.id === projectId ? { ...project, [field]: value } : project
+      )
+    );
+  };
+
   const [projects, setProjects] = useState([
     {
       id: crypto.randomUUID(),
@@ -199,7 +207,7 @@ function App() {
           updateWorkExperiences={updateWorkExperiences}
         />
         <SkillsSection skills={skillsForm} updateSkills={updateSkills} />
-        <ProjectSection projects={projects} />
+        <ProjectSection projects={projects} updateProjects={updateProjects} />
       </Resume>
     </>
   );
