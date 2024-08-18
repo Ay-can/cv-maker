@@ -130,6 +130,10 @@ function App() {
     setPerson({ ...person, [field]: value });
   };
 
+  const updateSkills = (field, value) => {
+    setSkillsForm({ ...skillsForm, [field]: value });
+  };
+
   const [projectForm, setProjectForm] = useState({
     name: "Cv-maker",
     link: "github.com/ay-can/cv-maker",
@@ -194,7 +198,7 @@ function App() {
           workExperiences={workExperiences}
           updateWorkExperiences={updateWorkExperiences}
         />
-        <SkillsSection skills={skillsForm} />
+        <SkillsSection skills={skillsForm} updateSkills={updateSkills} />
         <ProjectSection projects={projects} />
       </Resume>
     </>

@@ -1,6 +1,6 @@
 import "../styles/skills.css";
 
-function SkillsSection({ skills }) {
+function SkillsSection({ skills, updateSkills }) {
   return (
     <>
       <div className="skills-section">
@@ -8,20 +8,50 @@ function SkillsSection({ skills }) {
         <div className="skill-block">
           <div className="skill">
             <p className="skill-title">Programming Languages</p>
-            <p>{skills["programming-languages"]}</p>
+            <p
+              contentEditable
+              suppressContentEditableWarning
+              onBlur={(e) =>
+                updateSkills("programming-languages", e.target.textContent)
+              }
+            >
+              {skills["programming-languages"]}
+            </p>
           </div>
 
           <div className="skill">
-            <p className="skill-title">Libraries/Frameworks</p>
-            <p>{skills["libraries-frameworks"]}</p>
+            <p className="skill-title">Libraries / Frameworks</p>
+            <p
+              contentEditable
+              suppressContentEditableWarning
+              onBlur={(e) =>
+                updateSkills("libraries-frameworks", e.target.textContent)
+              }
+            >
+              {skills["libraries-frameworks"]}
+            </p>
           </div>
           <div className="skill">
-            <p className="skill-title">Tools/Platforms</p>
-            <p>{skills["tools-platforms"]}</p>
+            <p className="skill-title">Tools / Platforms</p>
+            <p
+              contentEditable
+              suppressContentEditableWarning
+              onBlur={(e) =>
+                updateSkills("tools-platforms", e.target.textContent)
+              }
+            >
+              {skills["tools-platforms"]}
+            </p>
           </div>
           <div className="skill">
             <p className="skill-title">Databases</p>
-            <p>{skills.databases}</p>
+            <p
+              contentEditable
+              suppressContentEditableWarning
+              onBlur={(e) => updateSkills("skill-title", e.target.textContent)}
+            >
+              {skills.databases}
+            </p>
           </div>
         </div>
       </div>
