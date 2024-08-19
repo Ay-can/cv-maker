@@ -48,10 +48,10 @@ function WorkForm({ work, handleWorkForm, handleClick }) {
             id="description"
             onChange={handleWorkForm}
           />
-          <button type="button" onClick={handleClick}>
-            Save
-          </button>
         </form>
+        <button type="button" onClick={handleClick}>
+          Save
+        </button>
       </div>
     </div>
   );

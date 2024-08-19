@@ -42,10 +42,10 @@ function EducationForm({ education, handleEducationForm, addStudy }) {
             id="location"
             onChange={handleEducationForm}
           />
-          <button type="button" onClick={addStudy}>
-            Add
-          </button>
         </form>
+        <button type="button" onClick={addStudy}>
+          Add
+        </button>
       </div>
     </div>
   );

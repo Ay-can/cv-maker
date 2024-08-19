@@ -1,7 +1,6 @@
 .work-experience-container {
   display: flex;
   justify-content: flex-end;
-  margin-top: 40px;
 }
 
 .work-experience-block {

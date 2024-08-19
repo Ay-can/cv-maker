@@ -176,39 +176,75 @@ function App() {
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore fugit magnam laudantium omnis similique iure harum velit at quas aperiam.",
   });
 
+  // This keeps the state of the form card toggles
+  // at first only toggle the personalInfo card and change state when user toggles
+  const [formToggles, setFormToggles] = useState({
+    personalInfo: true,
+    education: false,
+    work: false,
+    skills: false,
+    projects: false,
+  });
+
+  const updateFormToggles = (field) => {
+    formToggles[field]
+      ? setFormToggles({ ...formToggles, [field]: false })
+      : setFormToggles({ ...formToggles, [field]: true });
+  };
+
   return (
     <>
-      <PersonalInfoForm person={person} handleForm={handlePersonForm} />
-      <EducationForm
-        education={education}
-        handleEducationForm={handleEducationForm}
-        addStudy={addStudy}
-      />
-      <WorkForm
-        work={work}
-        handleWorkForm={handleWorkForm}
-        handleClick={saveWorkExperience}
-      />
-      <SkillsForm skillsForm={skillsForm} handleSkillsForm={handleSkillsForm} />
-      <ProjectForm
-        projectForm={projectForm}
-        handleProjectForm={handleProjectForm}
-        saveProjects={saveProjects}
-      />
-
-      <Resume>
-        <PersonalInfoSection
+      <div className="form-section">
+        <PersonalInfoForm
           person={person}
-          updatePersonalInfo={updatePersonalInfo}
+          handleForm={handlePersonForm}
+          formToggles={formToggles}
+          updateFormToggles={updateFormToggles}
         />
-        <EducationSection studies={studies} updateStudy={updateStudy} />
-        <WorkSection
-          workExperiences={workExperiences}
-          updateWorkExperiences={updateWorkExperiences}
+        <EducationForm
+          education={education}
+          handleEducationForm={handleEducationForm}
+          addStudy={addStudy}
+          formToggles={formToggles}
+          updateFormToggles={updateFormToggles}
         />
-        <SkillsSection skills={skillsForm} updateSkills={updateSkills} />
-        <ProjectSection projects={projects} updateProjects={updateProjects} />
-      </Resume>
+        <WorkForm
+          work={work}
+          handleWorkForm={handleWorkForm}
+          handleClick={saveWorkExperience}
+          formToggles={formToggles}
+          updateFormToggles={updateFormToggles}
+        />
+        <SkillsForm
+          skillsForm={skillsForm}
+          handleSkillsForm={handleSkillsForm}
+          formToggles={formToggles}
+          updateFormToggles={updateFormToggles}
+        />
+        <ProjectForm
+          projectForm={projectForm}
+          handleProjectForm={handleProjectForm}
+          saveProjects={saveProjects}
+          formToggles={formToggles}
+          updateFormToggles={updateFormToggles}
+        />
+      </div>
+
+      <div className="resume-section">
+        <Resume>
+          <PersonalInfoSection
+            person={person}
+            updatePersonalInfo={updatePersonalInfo}
+          />
+          <EducationSection studies={studies} updateStudy={updateStudy} />
+          <WorkSection
+            workExperiences={workExperiences}
+            updateWorkExperiences={updateWorkExperiences}
+          />
+          <SkillsSection skills={skillsForm} updateSkills={updateSkills} />
+          <ProjectSection projects={projects} updateProjects={updateProjects} />
+        </Resume>
+      </div>
     </>
   );
 }

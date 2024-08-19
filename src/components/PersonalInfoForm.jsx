@@ -1,21 +1,23 @@
-import { useState } from "react";
 import "../styles/personalInfo.css";
 
-function PersonalInfoForm({ person, handleForm }) {
-  const [cardToggle, setCardaToggle] = useState(true);
-
-  const changeToggle = () => {
-    return cardToggle ? setCardaToggle(false) : setCardaToggle(true);
+function PersonalInfoForm({
+  person,
+  handleForm,
+  formToggles,
+  updateFormToggles,
+}) {
+  const handleFormToggles = () => {
+    updateFormToggles("personalInfo");
   };
 
-  if (!cardToggle) {
+  if (!formToggles.personalInfo) {
     return (
       <>
         <div className="personal-info-container toggled">
           <div className="card toggled">
             <div className="header-toggle">
               <h2>Personal Info</h2>
-              <button onClick={changeToggle} type="button">
+              <button onClick={handleFormToggles} type="button">
                 Toggle
               </button>
             </div>
@@ -30,7 +32,7 @@ function PersonalInfoForm({ person, handleForm }) {
       <div className="card">
         <div className="header-toggle">
           <h2>Personal Info</h2>
-          <button onClick={changeToggle} type="button">
+          <button onClick={handleFormToggles} type="button">
             Toggle
           </button>
         </div>

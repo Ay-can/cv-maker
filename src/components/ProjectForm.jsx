@@ -34,10 +34,10 @@ function ProjectForm({ projectForm, handleProjectForm, saveProjects }) {
             onChange={handleProjectForm}
             form="project-form"
           ></textarea>
-          <button type="button" onClick={saveProjects}>
-            Save
-          </button>
         </form>
+        <button type="button" onClick={saveProjects}>
+          Save
+        </button>
       </div>
     </div>
   );
