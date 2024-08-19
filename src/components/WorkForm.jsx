@@ -11,7 +11,6 @@ function WorkForm({ work, handleWorkForm, handleClick }) {
             type="text"
             name="company"
             id="company"
-            value={work.company}
             onChange={handleWorkForm}
           />
           <label htmlFor="position">Position</label>
@@ -19,7 +18,6 @@ function WorkForm({ work, handleWorkForm, handleClick }) {
             type="text"
             name="position"
             id="position"
-            value={work.position}
             onChange={handleWorkForm}
           />
           <label htmlFor="start-date">Start Date</label>
@@ -27,7 +25,6 @@ function WorkForm({ work, handleWorkForm, handleClick }) {
             type="text"
             name="start-date"
             id="start-date"
-            value={work["start-date"]}
             onChange={handleWorkForm}
           />
           <label htmlFor="end-date">End Date</label>
@@ -35,7 +32,6 @@ function WorkForm({ work, handleWorkForm, handleClick }) {
             type="text"
             name="end-date"
             id="end-date"
-            value={work["end-date"]}
             onChange={handleWorkForm}
           />
           <label htmlFor="location">Location</label>
@@ -43,7 +39,6 @@ function WorkForm({ work, handleWorkForm, handleClick }) {
             type="text"
             name="location"
             id="location"
-            value={work.location}
             onChange={handleWorkForm}
           />
           <label htmlFor="description">Description</label>
@@ -51,7 +46,6 @@ function WorkForm({ work, handleWorkForm, handleClick }) {
             type="text"
             name="description"
             id="description"
-            value={work.description}
             onChange={handleWorkForm}
           />
           <button type="button" onClick={handleClick}>

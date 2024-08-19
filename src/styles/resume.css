@@ -77,10 +77,36 @@ a:hover {
   color: #dc143c;
 }
 
-.card {
+.card,
+.card.toggled {
   width: 450px;
   height: 350px;
   padding: 32px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
+}
+
+.card.toggled {
+  height: 40px;
+  padding-top: 0;
+}
+
+.header-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-toggle > button {
+  width: fit-content;
+  height: fit-content;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 10px;
+  background-color: #968aec;
+}
+
+button:active {
+  position: relative;
+  top: 2px;
 }

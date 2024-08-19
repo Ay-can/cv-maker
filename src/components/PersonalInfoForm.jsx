@@ -1,10 +1,39 @@
+import { useState } from "react";
 import "../styles/personalInfo.css";
 
 function PersonalInfoForm({ person, handleForm }) {
+  const [cardToggle, setCardaToggle] = useState(true);
+
+  const changeToggle = () => {
+    return cardToggle ? setCardaToggle(false) : setCardaToggle(true);
+  };
+
+  if (!cardToggle) {
+    return (
+      <>
+        <div className="personal-info-container toggled">
+          <div className="card toggled">
+            <div className="header-toggle">
+              <h2>Personal Info</h2>
+              <button onClick={changeToggle} type="button">
+                Toggle
+              </button>
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
+
   return (
     <div className="personal-info-container">
       <div className="card">
-        <h2>Personal Info</h2>
+        <div className="header-toggle">
+          <h2>Personal Info</h2>
+          <button onClick={changeToggle} type="button">
+            Toggle
+          </button>
+        </div>
         <form>
           <label htmlFor="fullname">Fullname </label>
           <input
