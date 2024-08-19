@@ -1,11 +1,42 @@
 import { useState } from "react";
 import "../styles/education.css";
 
-function EducationForm({ education, handleEducationForm, addStudy }) {
+function EducationForm({
+  handleEducationForm,
+  addStudy,
+  formToggles,
+  updateFormToggles,
+}) {
+  const handleFormToggles = () => {
+    updateFormToggles("education");
+  };
+
+  if (!formToggles.education) {
+    return (
+      <>
+        <div className="education-container toggled">
+          <div className="card toggled">
+            <div className="header-toggle">
+              <h2>Education</h2>
+              <button onClick={handleFormToggles} type="button">
+                Toggle
+              </button>
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
+
   return (
     <div className="education-container">
       <div className="card">
-        <h2>Education</h2>
+        <div className="header-toggle">
+          <h2>Education</h2>
+          <button onClick={handleFormToggles} type="button">
+            Toggle
+          </button>
+        </div>
         <form action="">
           <label htmlFor="school">School</label>
           <input
