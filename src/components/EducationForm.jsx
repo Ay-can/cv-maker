@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "../styles/education.css";
 
 function EducationForm({

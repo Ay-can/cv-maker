@@ -26,9 +26,10 @@
   justify-content: space-between;
   height: 30px;
   align-items: center;
+  padding-left: 10px;
 }
 
 .project-description-container > * {
   margin: 0;
-  padding-left: 6px;
+  padding-left: 16px;
 }

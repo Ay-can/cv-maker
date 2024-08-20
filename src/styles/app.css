@@ -2,6 +2,7 @@
   min-height: 100vh;
   display: grid;
   grid-template-columns: 40% 50%;
+  grid-template-rows: 1fr 1fr;
   column-gap: 120px;
   row-gap: 40px;
   margin: 0;
