@@ -1,14 +1,21 @@
+import { useState } from "react";
 import "../styles/project.css";
 
-function ProjectSection({ projects, updateProjects }) {
+function ProjectSection({ projects, updateProjects, deleteProject }) {
   const handleInput = (e, projectId, field) => {
     const updatedValue = e.target.textContent;
     updateProjects(projectId, field, updatedValue);
   };
 
+  const [hiddenBtn, setHiddenBtn] = useState(false);
+
   return (
     <>
-      <div className="project-section">
+      <div
+        className="project-section"
+        onMouseEnter={() => setHiddenBtn(true)}
+        onMouseLeave={() => setHiddenBtn(false)}
+      >
         <h2 className="section-header">Projects</h2>
         {projects.map((project) => {
           return (
@@ -39,6 +46,16 @@ function ProjectSection({ projects, updateProjects }) {
                   >
                     {project.stack}
                   </p>
+                  <div className="delete-container">
+                    {hiddenBtn && (
+                      <button
+                        className="delete-btn"
+                        onClick={() => deleteProject(project.id)}
+                      >
+                        Delete
+                      </button>
+                    )}
+                  </div>
                 </div>
               </div>
               <div className="project-description-container">

@@ -82,6 +82,12 @@ function App() {
     );
   };
 
+  const deleteProject = (id) => {
+    setProjects((prevProjects) =>
+      prevProjects.filter((project) => project.id !== id)
+    );
+  };
+
   const [projects, setProjects] = useState([
     {
       id: crypto.randomUUID(),
@@ -242,7 +248,11 @@ function App() {
             updateWorkExperiences={updateWorkExperiences}
           />
           <SkillsSection skills={skillsForm} updateSkills={updateSkills} />
-          <ProjectSection projects={projects} updateProjects={updateProjects} />
+          <ProjectSection
+            projects={projects}
+            updateProjects={updateProjects}
+            deleteProject={deleteProject}
+          />
         </Resume>
       </div>
     </>
