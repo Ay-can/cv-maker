@@ -1,4 +1,6 @@
 import "../styles/personalInfo.css";
+import Icon from "@mdi/react";
+import { mdiArrowDownBoldOutline } from "@mdi/js";
 
 function PersonalInfoForm({
   person,
@@ -14,12 +16,14 @@ function PersonalInfoForm({
     return (
       <>
         <div className="personal-info-container toggled">
-          <div className="card toggled">
+          <div className="card toggled" onClick={handleFormToggles}>
             <div className="header-toggle">
               <h2>Personal Info</h2>
-              <button onClick={handleFormToggles} type="button">
-                Toggle
-              </button>
+              <Icon
+                path={mdiArrowDownBoldOutline}
+                size={1.5}
+                style={{ color: "white", position: "relative", top: "4px" }}
+              />
             </div>
           </div>
         </div>
@@ -29,12 +33,14 @@ function PersonalInfoForm({
 
   return (
     <div className="personal-info-container">
-      <div className="card">
+      <div className="card" onClick={handleFormToggles}>
         <div className="header-toggle">
           <h2>Personal Info</h2>
-          <button onClick={handleFormToggles} type="button">
-            Toggle
-          </button>
+          <Icon
+            path={mdiArrowDownBoldOutline}
+            size={1.5}
+            style={{ color: "white", position: "relative", top: "4px" }}
+          />
         </div>
         <form>
           <label htmlFor="fullname">Fullname </label>

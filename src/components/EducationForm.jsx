@@ -1,5 +1,8 @@
 import "../styles/education.css";
 
+import Icon from "@mdi/react";
+import { mdiArrowDownBoldOutline } from "@mdi/js";
+
 function EducationForm({
   handleEducationForm,
   addStudy,
@@ -14,12 +17,14 @@ function EducationForm({
     return (
       <>
         <div className="education-container toggled">
-          <div className="card toggled">
+          <div className="card toggled" onClick={handleFormToggles}>
             <div className="header-toggle">
               <h2>Add Education</h2>
-              <button onClick={handleFormToggles} type="button">
-                Toggle
-              </button>
+              <Icon
+                path={mdiArrowDownBoldOutline}
+                size={1.5}
+                style={{ color: "white", position: "relative", top: "4px" }}
+              />
             </div>
           </div>
         </div>
@@ -29,12 +34,14 @@ function EducationForm({
 
   return (
     <div className="education-container">
-      <div className="card">
+      <div className="card" onClick={handleFormToggles}>
         <div className="header-toggle">
           <h2>Add Education</h2>
-          <button onClick={handleFormToggles} type="button">
-            Toggle
-          </button>
+          <Icon
+            path={mdiArrowDownBoldOutline}
+            size={1.5}
+            style={{ color: "white", position: "relative", top: "4px" }}
+          />
         </div>
         <form action="">
           <label htmlFor="school">School</label>

@@ -1,5 +1,8 @@
 import "../styles/project.css";
 
+import Icon from "@mdi/react";
+import { mdiArrowDownBoldOutline } from "@mdi/js";
+
 function ProjectForm({
   handleProjectForm,
   saveProjects,
@@ -10,15 +13,17 @@ function ProjectForm({
     return (
       <>
         <div className="projects-container toggled">
-          <div className="card toggled">
+          <div
+            className="card toggled"
+            onClick={() => updateFormToggles("projects")}
+          >
             <div className="header-toggle">
               <h2>Projects</h2>
-              <button
-                onClick={() => updateFormToggles("projects")}
-                type="button"
-              >
-                Toggle
-              </button>
+              <Icon
+                path={mdiArrowDownBoldOutline}
+                size={1.5}
+                style={{ color: "white" }}
+              />
             </div>
           </div>
         </div>
@@ -28,12 +33,14 @@ function ProjectForm({
 
   return (
     <div className="project-container">
-      <div className="card">
+      <div className="card" onClick={() => updateFormToggles("projects")}>
         <div className="header-toggle">
           <h2>Projects</h2>
-          <button onClick={() => updateFormToggles("projects")} type="button">
-            Toggle
-          </button>
+          <Icon
+            path={mdiArrowDownBoldOutline}
+            size={1.5}
+            style={{ color: "white" }}
+          />
         </div>
         <form action="" id="project-form">
           <label htmlFor="name">Name</label>

@@ -22,8 +22,8 @@ main {
   padding: 16px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
-  border-top: 40px solid 6482AD;
-  background-color: #7fa1c3;
+  border-top: 30px solid #393e46;
+  background-color: #222831;
 }
 
 .card.toggled {
@@ -52,6 +52,10 @@ form input {
   border: none;
   border-bottom: 1px solid black;
   padding: 6px;
+}
+
+form label {
+  color: #eeeeee;
 }
 
 .form-section {

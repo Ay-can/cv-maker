@@ -1,5 +1,8 @@
 import "../styles/skills.css";
 
+import Icon from "@mdi/react";
+import { mdiArrowDownBoldOutline } from "@mdi/js";
+
 function SkillsForm({
   skillsForm,
   handleSkillsForm,
@@ -10,12 +13,17 @@ function SkillsForm({
     return (
       <>
         <div className="skills-container toggled">
-          <div className="card toggled">
+          <div
+            className="card toggled"
+            onClick={() => updateFormToggles("skills")}
+          >
             <div className="header-toggle">
               <h2>Skills</h2>
-              <button onClick={() => updateFormToggles("skills")} type="button">
-                Toggle
-              </button>
+              <Icon
+                path={mdiArrowDownBoldOutline}
+                size={1.5}
+                style={{ color: "white" }}
+              />
             </div>
           </div>
         </div>
@@ -25,12 +33,14 @@ function SkillsForm({
 
   return (
     <div className="skills-container">
-      <div className="card">
+      <div className="card" onClick={() => updateFormToggles("skills")}>
         <div className="header-toggle">
           <h2>Skills</h2>
-          <button onClick={() => updateFormToggles("skills")} type="button">
-            Toggle
-          </button>
+          <Icon
+            path={mdiArrowDownBoldOutline}
+            size={1.5}
+            style={{ color: "white", position: "relative", top: "4px" }}
+          />
         </div>
         <form action="">
           <label htmlFor="programming-languages">Programming Languages</label>

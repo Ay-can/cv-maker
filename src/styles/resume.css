@@ -78,24 +78,6 @@ a:hover {
   color: #dc143c;
 }
 
-.card,
-.card.toggled {
-  width: 500px;
-  padding: 16px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  border-radius: 10px;
-  border-top: 40px solid 6482AD;
-  background-color: #7fa1c3;
-}
-
-.card.toggled {
-  height: 60px;
-}
-
-.card > * {
-  padding: 8px;
-}
-
 .header-toggle {
   display: flex;
   justify-content: space-between;
@@ -108,9 +90,9 @@ a:hover {
   padding: 8px 16px;
   border: none;
   border-radius: 10px;
-  background-color: #f5eded;
+  background-color: #00adb5;
   margin: 12px;
-  color: #6482ad;
+  color: #eeeeee;
   font-weight: 600;
 }
 
@@ -119,7 +101,7 @@ a:hover {
 }
 
 .header-toggle > h2 {
-  color: #ffffff;
+  color: #eeeeee;
 }
 
 button:active {
@@ -149,4 +131,8 @@ button:active {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.resume-section {
+  border: 2px solid black;
 }

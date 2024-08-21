@@ -1,5 +1,8 @@
 import "../styles/work.css";
 
+import Icon from "@mdi/react";
+import { mdiArrowDownBoldOutline } from "@mdi/js";
+
 function WorkForm({
   work,
   handleWorkForm,
@@ -11,12 +14,17 @@ function WorkForm({
     return (
       <>
         <div className="work-experience-container toggled">
-          <div className="card toggled">
+          <div
+            className="card toggled"
+            onClick={() => updateFormToggles("work")}
+          >
             <div className="header-toggle">
               <h2>Add Work Experience</h2>
-              <button onClick={() => updateFormToggles("work")} type="button">
-                Toggle
-              </button>
+              <Icon
+                path={mdiArrowDownBoldOutline}
+                size={1.5}
+                style={{ color: "white", position: "relative", top: "4px" }}
+              />
             </div>
           </div>
         </div>
@@ -26,12 +34,14 @@ function WorkForm({
 
   return (
     <div className="work-experience-container">
-      <div className="card">
+      <div className="card" onClick={() => updateFormToggles("work")}>
         <div className="header-toggle">
           <h2>Add Work Experience</h2>
-          <button onClick={() => updateFormToggles("work")} type="button">
-            Toggle
-          </button>
+          <Icon
+            path={mdiArrowDownBoldOutline}
+            size={1.5}
+            style={{ color: "white", position: "relative", top: "4px" }}
+          />
         </div>
         <form action="">
           <label htmlFor="company">Company</label>
