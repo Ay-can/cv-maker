@@ -1,9 +1,7 @@
 import { useState } from "react";
-import PersonalInfoForm from "./components/PersonalInfoForm";
 import Resume from "./components/Resume";
 import EducationForm from "./components/EducationForm";
 import WorkForm from "./components/WorkForm";
-import SkillsForm from "./components/SkillsForm";
 import WorkSection from "./components/WorkSection";
 import SkillsSection from "./components/SkillsSection";
 
@@ -215,16 +213,13 @@ function App() {
   return (
     <>
       <header>
-        <h1>Cv-Maker</h1>
+        <div className="header-container">
+          <h1>Cv-Maker</h1>
+          <h3>Click on the resume to edit/delete fields!</h3>
+        </div>
       </header>
       <main>
         <div className="form-section">
-          <PersonalInfoForm
-            person={person}
-            handleForm={handlePersonForm}
-            formToggles={formToggles}
-            updateFormToggles={updateFormToggles}
-          />
           <EducationForm
             education={education}
             handleEducationForm={handleEducationForm}
@@ -239,12 +234,7 @@ function App() {
             formToggles={formToggles}
             updateFormToggles={updateFormToggles}
           />
-          <SkillsForm
-            skillsForm={skillsForm}
-            handleSkillsForm={handleSkillsForm}
-            formToggles={formToggles}
-            updateFormToggles={updateFormToggles}
-          />
+
           <ProjectForm
             projectForm={projectForm}
             handleProjectForm={handleProjectForm}

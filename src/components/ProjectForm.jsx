@@ -18,7 +18,7 @@ function ProjectForm({
             onClick={() => updateFormToggles("projects")}
           >
             <div className="header-toggle">
-              <h2>Projects</h2>
+              <h2>Add Projects</h2>
               <Icon
                 path={mdiArrowDownBoldOutline}
                 size={1.5}
@@ -35,7 +35,7 @@ function ProjectForm({
     <div className="project-container">
       <div className="card" onClick={() => updateFormToggles("projects")}>
         <div className="header-toggle">
-          <h2>Projects</h2>
+          <h2>Add Projects</h2>
           <Icon
             path={mdiArrowDownBoldOutline}
             size={1.5}
