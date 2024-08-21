@@ -136,3 +136,9 @@ button:active {
   justify-content: flex-end;
   margin-left: 20px;
 }
+
+.date-delete-btn-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}

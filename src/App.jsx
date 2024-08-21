@@ -80,6 +80,14 @@ function App() {
     );
   };
 
+  const deleteWorkExperience = (workId) => {
+    setWorkExperiences((prevWorkExperiences) =>
+      prevWorkExperiences.filter(
+        (workExperience) => workExperience.id !== workId
+      )
+    );
+  };
+
   const updateProjects = (projectId, field, value) => {
     setProjects((prevProjects) =>
       prevProjects.map((project) =>
@@ -256,6 +264,7 @@ function App() {
           <WorkSection
             workExperiences={workExperiences}
             updateWorkExperiences={updateWorkExperiences}
+            deleteWorkExperience={deleteWorkExperience}
           />
           <SkillsSection skills={skillsForm} updateSkills={updateSkills} />
           <ProjectSection

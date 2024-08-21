@@ -1,14 +1,25 @@
+import { useState } from "react";
 import "../styles/work.css";
 
-function WorkSection({ workExperiences, updateWorkExperiences }) {
+function WorkSection({
+  workExperiences,
+  updateWorkExperiences,
+  deleteWorkExperience,
+}) {
   const handleInput = (e, workId, field) => {
     const updatedValue = e.target.textContent;
     updateWorkExperiences(workId, field, updatedValue);
   };
 
+  const [hiddenBtn, setHiddenBtn] = useState(false);
+
   return (
     <>
-      <div className="work-experience-section">
+      <div
+        className="work-experience-section"
+        onMouseEnter={() => setHiddenBtn(true)}
+        onMouseLeave={() => setHiddenBtn(false)}
+      >
         <h2 className="section-header">Work Experience</h2>
         {workExperiences.map((experience) => {
           return (
@@ -31,30 +42,42 @@ function WorkSection({ workExperiences, updateWorkExperiences }) {
                     {experience.position}
                   </p>
                 </div>
-                <div className="date-container">
-                  <p
-                    contentEditable
-                    suppressContentEditableWarning
-                    onBlur={(e) => handleInput(e, experience.id, "startDate")}
-                  >
-                    {experience.startDate}
-                  </p>
-                  <p className="seperator"> - </p>
-                  <p
-                    contentEditable
-                    suppressContentEditableWarning
-                    onBlur={(e) => handleInput(e, experience.id, "endDate")}
-                  >
-                    {experience.endDate}
-                  </p>
-                  <p className="seperator"> | </p>
-                  <p
-                    contentEditable
-                    suppressContentEditableWarning
-                    onBlur={(e) => handleInput(e, experience.id, "location")}
-                  >
-                    {experience.location}
-                  </p>
+                <div className="date-delete-btn-container">
+                  <div className="date-container">
+                    <p
+                      contentEditable
+                      suppressContentEditableWarning
+                      onBlur={(e) => handleInput(e, experience.id, "startDate")}
+                    >
+                      {experience.startDate}
+                    </p>
+                    <p className="seperator"> - </p>
+                    <p
+                      contentEditable
+                      suppressContentEditableWarning
+                      onBlur={(e) => handleInput(e, experience.id, "endDate")}
+                    >
+                      {experience.endDate}
+                    </p>
+                    <p className="seperator"> | </p>
+                    <p
+                      contentEditable
+                      suppressContentEditableWarning
+                      onBlur={(e) => handleInput(e, experience.id, "location")}
+                    >
+                      {experience.location}
+                    </p>
+                  </div>
+                  <div className="delete-container">
+                    {hiddenBtn && (
+                      <button
+                        className="delete-btn"
+                        onClick={() => deleteWorkExperience(experience.id)}
+                      >
+                        Delete
+                      </button>
+                    )}
+                  </div>
                 </div>
               </div>
               <div className="work-description-container">
