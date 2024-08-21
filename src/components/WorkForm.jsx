@@ -1,10 +1,38 @@
 import "../styles/work.css";
 
-function WorkForm({ work, handleWorkForm, handleClick }) {
+function WorkForm({
+  work,
+  handleWorkForm,
+  handleClick,
+  formToggles,
+  updateFormToggles,
+}) {
+  if (!formToggles.work) {
+    return (
+      <>
+        <div className="work-experience-container toggled">
+          <div className="card toggled">
+            <div className="header-toggle">
+              <h2>Add Work Experience</h2>
+              <button onClick={() => updateFormToggles("work")} type="button">
+                Toggle
+              </button>
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
+
   return (
     <div className="work-experience-container">
       <div className="card">
-        <h2>Work Experience</h2>
+        <div className="header-toggle">
+          <h2>Add Work Experience</h2>
+          <button onClick={() => updateFormToggles("work")} type="button">
+            Toggle
+          </button>
+        </div>
         <form action="">
           <label htmlFor="company">Company</label>
           <input

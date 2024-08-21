@@ -16,7 +16,7 @@ function EducationForm({
         <div className="education-container toggled">
           <div className="card toggled">
             <div className="header-toggle">
-              <h2>Education</h2>
+              <h2>Add Education</h2>
               <button onClick={handleFormToggles} type="button">
                 Toggle
               </button>
@@ -31,7 +31,7 @@ function EducationForm({
     <div className="education-container">
       <div className="card">
         <div className="header-toggle">
-          <h2>Education</h2>
+          <h2>Add Education</h2>
           <button onClick={handleFormToggles} type="button">
             Toggle
           </button>

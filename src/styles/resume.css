@@ -104,6 +104,11 @@ a:hover {
   border: none;
   border-radius: 10px;
   background-color: #c3b4e5;
+  margin: 12px;
+}
+
+.header-toggle > * {
+  margin: 0;
 }
 
 button:active {

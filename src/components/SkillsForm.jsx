@@ -1,10 +1,37 @@
 import "../styles/skills.css";
 
-function SkillsForm({ skillsForm, handleSkillsForm }) {
+function SkillsForm({
+  skillsForm,
+  handleSkillsForm,
+  formToggles,
+  updateFormToggles,
+}) {
+  if (!formToggles.skills) {
+    return (
+      <>
+        <div className="skills-container toggled">
+          <div className="card toggled">
+            <div className="header-toggle">
+              <h2>Skills</h2>
+              <button onClick={() => updateFormToggles("skills")} type="button">
+                Toggle
+              </button>
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
+
   return (
     <div className="skills-container">
       <div className="card">
-        <h2>Skills</h2>
+        <div className="header-toggle">
+          <h2>Skills</h2>
+          <button onClick={() => updateFormToggles("skills")} type="button">
+            Toggle
+          </button>
+        </div>
         <form action="">
           <label htmlFor="programming-languages">Programming Languages</label>
           <input
