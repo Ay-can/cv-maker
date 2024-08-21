@@ -1,14 +1,21 @@
+import { useState } from "react";
 import "../styles/education.css";
 
-function EducationSection({ studies, updateStudy }) {
+function EducationSection({ studies, updateStudy, deleteStudy }) {
   const handleInput = (e, studyId, field) => {
     // In case of a date, don't append the '-' symbol to the updated state obj
     const updatedValue = e.target.textContent;
     updateStudy(studyId, field, updatedValue);
   };
 
+  const [hiddenBtn, setHiddenBtn] = useState(false);
+
   return (
-    <div className="education-section">
+    <div
+      className="education-section"
+      onMouseEnter={() => setHiddenBtn(true)}
+      onMouseLeave={() => setHiddenBtn(false)}
+    >
       <h2 className="section-header">Education</h2>
       {studies.map((study, index) => {
         return (
@@ -58,6 +65,16 @@ function EducationSection({ studies, updateStudy }) {
                 >
                   {study.location}
                 </p>
+                <div className="delete-container">
+                  {hiddenBtn && (
+                    <button
+                      className="delete-btn"
+                      onClick={() => deleteStudy(study.id)}
+                    >
+                      Delete
+                    </button>
+                  )}
+                </div>
               </div>
             </div>
           </div>

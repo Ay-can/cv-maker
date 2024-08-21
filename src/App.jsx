@@ -64,6 +64,12 @@ function App() {
     );
   };
 
+  const deleteStudy = (studyId) => {
+    setStudies((prevStudies) =>
+      prevStudies.filter((study) => study.id !== studyId)
+    );
+  };
+
   const updateWorkExperiences = (workId, field, value) => {
     setWorkExperiences((prev) =>
       prev.map((experience) =>
@@ -242,7 +248,11 @@ function App() {
             person={person}
             updatePersonalInfo={updatePersonalInfo}
           />
-          <EducationSection studies={studies} updateStudy={updateStudy} />
+          <EducationSection
+            studies={studies}
+            updateStudy={updateStudy}
+            deleteStudy={deleteStudy}
+          />
           <WorkSection
             workExperiences={workExperiences}
             updateWorkExperiences={updateWorkExperiences}

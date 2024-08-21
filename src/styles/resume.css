@@ -81,14 +81,17 @@ a:hover {
 .card,
 .card.toggled {
   width: 500px;
-  padding: 32px;
+  padding: 16px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
 }
 
 .card.toggled {
-  height: 40px;
-  padding-top: 0;
+  height: 60px;
+}
+
+.card > * {
+  padding: 8px;
 }
 
 .header-toggle {
@@ -131,4 +134,5 @@ button:active {
 .delete-container {
   display: flex;
   justify-content: flex-end;
+  margin-left: 20px;
 }
