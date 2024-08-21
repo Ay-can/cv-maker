@@ -42,7 +42,7 @@ function ProjectForm({
             style={{ color: "white" }}
           />
         </div>
-        <form action="" id="project-form">
+        <form action="" id="project-form" onClick={(e) => e.stopPropagation()}>
           <label htmlFor="name">Name</label>
           <input
             type="text"

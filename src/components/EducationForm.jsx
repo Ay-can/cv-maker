@@ -43,7 +43,7 @@ function EducationForm({
             style={{ color: "white", position: "relative", top: "4px" }}
           />
         </div>
-        <form action="">
+        <form action="" onClick={(e) => e.stopPropagation()}>
           <label htmlFor="school">School</label>
           <input
             type="text"
