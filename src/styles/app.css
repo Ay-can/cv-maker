@@ -13,7 +13,7 @@ body {
 
 main {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   row-gap: 40px;
   margin: 0;
   padding: 64px;
@@ -72,8 +72,6 @@ form label {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  position: sticky;
-  top: 40px;
 }
 
 .personal-info-container,
