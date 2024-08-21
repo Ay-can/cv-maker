@@ -44,7 +44,7 @@ h3 {
   justify-content: center;
 }
 
-header {
+.resume-header {
   height: 120px;
   padding: 32px;
   border-bottom: black 2px solid;
@@ -84,6 +84,8 @@ a:hover {
   padding: 16px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
+  border-top: 40px solid 6482AD;
+  background-color: #7fa1c3;
 }
 
 .card.toggled {
@@ -106,12 +108,18 @@ a:hover {
   padding: 8px 16px;
   border: none;
   border-radius: 10px;
-  background-color: #c3b4e5;
+  background-color: #f5eded;
   margin: 12px;
+  color: #6482ad;
+  font-weight: 600;
 }
 
 .header-toggle > * {
   margin: 0;
+}
+
+.header-toggle > h2 {
+  color: #ffffff;
 }
 
 button:active {

@@ -2,7 +2,7 @@ import "../styles/resume.css";
 
 function PersonalInfoSection({ person, updatePersonalInfo }) {
   return (
-    <header>
+    <header className="resume-header">
       <p
         contentEditable
         suppressContentEditableWarning

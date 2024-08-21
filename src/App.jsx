@@ -214,66 +214,71 @@ function App() {
 
   return (
     <>
-      <div className="form-section">
-        <PersonalInfoForm
-          person={person}
-          handleForm={handlePersonForm}
-          formToggles={formToggles}
-          updateFormToggles={updateFormToggles}
-        />
-        <EducationForm
-          education={education}
-          handleEducationForm={handleEducationForm}
-          addStudy={addStudy}
-          formToggles={formToggles}
-          updateFormToggles={updateFormToggles}
-        />
-        <WorkForm
-          work={work}
-          handleWorkForm={handleWorkForm}
-          handleClick={saveWorkExperience}
-          formToggles={formToggles}
-          updateFormToggles={updateFormToggles}
-        />
-        <SkillsForm
-          skillsForm={skillsForm}
-          handleSkillsForm={handleSkillsForm}
-          formToggles={formToggles}
-          updateFormToggles={updateFormToggles}
-        />
-        <ProjectForm
-          projectForm={projectForm}
-          handleProjectForm={handleProjectForm}
-          saveProjects={saveProjects}
-          formToggles={formToggles}
-          updateFormToggles={updateFormToggles}
-        />
-      </div>
-
-      <div className="resume-section">
-        <Resume>
-          <PersonalInfoSection
+      <header>
+        <h1>Cv-Maker</h1>
+      </header>
+      <main>
+        <div className="form-section">
+          <PersonalInfoForm
             person={person}
-            updatePersonalInfo={updatePersonalInfo}
+            handleForm={handlePersonForm}
+            formToggles={formToggles}
+            updateFormToggles={updateFormToggles}
           />
-          <EducationSection
-            studies={studies}
-            updateStudy={updateStudy}
-            deleteStudy={deleteStudy}
+          <EducationForm
+            education={education}
+            handleEducationForm={handleEducationForm}
+            addStudy={addStudy}
+            formToggles={formToggles}
+            updateFormToggles={updateFormToggles}
           />
-          <WorkSection
-            workExperiences={workExperiences}
-            updateWorkExperiences={updateWorkExperiences}
-            deleteWorkExperience={deleteWorkExperience}
+          <WorkForm
+            work={work}
+            handleWorkForm={handleWorkForm}
+            handleClick={saveWorkExperience}
+            formToggles={formToggles}
+            updateFormToggles={updateFormToggles}
           />
-          <SkillsSection skills={skillsForm} updateSkills={updateSkills} />
-          <ProjectSection
-            projects={projects}
-            updateProjects={updateProjects}
-            deleteProject={deleteProject}
+          <SkillsForm
+            skillsForm={skillsForm}
+            handleSkillsForm={handleSkillsForm}
+            formToggles={formToggles}
+            updateFormToggles={updateFormToggles}
           />
-        </Resume>
-      </div>
+          <ProjectForm
+            projectForm={projectForm}
+            handleProjectForm={handleProjectForm}
+            saveProjects={saveProjects}
+            formToggles={formToggles}
+            updateFormToggles={updateFormToggles}
+          />
+        </div>
+
+        <div className="resume-section">
+          <Resume>
+            <PersonalInfoSection
+              person={person}
+              updatePersonalInfo={updatePersonalInfo}
+            />
+            <EducationSection
+              studies={studies}
+              updateStudy={updateStudy}
+              deleteStudy={deleteStudy}
+            />
+            <WorkSection
+              workExperiences={workExperiences}
+              updateWorkExperiences={updateWorkExperiences}
+              deleteWorkExperience={deleteWorkExperience}
+            />
+            <SkillsSection skills={skillsForm} updateSkills={updateSkills} />
+            <ProjectSection
+              projects={projects}
+              updateProjects={updateProjects}
+              deleteProject={deleteProject}
+            />
+          </Resume>
+        </div>
+      </main>
     </>
   );
 }
