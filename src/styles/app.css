@@ -13,11 +13,12 @@ body {
 
 main {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   row-gap: 40px;
+  column-gap: 120px;
   margin: 0;
   padding: 64px;
-  padding-top: 10px;
+  background-color: #222831;
 }
 
 .card,
@@ -26,7 +27,7 @@ main {
   padding: 16px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
-  border-top: 30px solid #393e46;
+  border-top: 30px solid #00adb5;
   background-color: #222831;
 }
 
@@ -38,13 +39,13 @@ main {
   padding: 8px;
 }
 
-header {
+.navbar-header {
   display: flex;
   justify-content: center;
   padding: 0;
   margin: 0;
-  padding: 16px;
-  padding-top: 0;
+  padding: 32px;
+  background-color: #00adb5;
 }
 
 header h1 {
@@ -60,7 +61,6 @@ form {
 form input {
   outline: none;
   border: none;
-  border-bottom: 1px solid black;
   padding: 6px;
 }
 
@@ -72,14 +72,20 @@ form label {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  position: sticky;
+  top: 20px;
 }
 
-.personal-info-container,
 .education-container,
 .work-experience-container,
-.skills-container,
-.project-container {
+.projects-container {
   justify-content: flex-start;
+}
+
+.education-container > *,
+.work-experience-container > *,
+.projects-container > * {
+  flex: 1;
 }
 
 .header-container {
@@ -91,4 +97,25 @@ form label {
 
 .header-container > * {
   margin: 0;
+  color: #eeeeee;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+  background-color: #00adb5;
+}
+
+.header-container p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #eeeeee;
+}
+
+a:link,
+a:visited {
+  color: #1f316f;
+  text-decoration: underline;
 }

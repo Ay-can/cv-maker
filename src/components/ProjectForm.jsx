@@ -32,7 +32,7 @@ function ProjectForm({
   }
 
   return (
-    <div className="project-container">
+    <div className="projects-container">
       <div className="card" onClick={() => updateFormToggles("projects")}>
         <div className="header-toggle">
           <h2>Add Projects</h2>
@@ -72,7 +72,13 @@ function ProjectForm({
             form="project-form"
           ></textarea>
         </form>
-        <button type="button" onClick={saveProjects}>
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            saveProjects();
+          }}
+        >
           Save
         </button>
       </div>

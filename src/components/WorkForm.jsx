@@ -87,7 +87,13 @@ function WorkForm({
             onChange={handleWorkForm}
           />
         </form>
-        <button type="button" onClick={handleClick}>
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            handleClick();
+          }}
+        >
           Save
         </button>
       </div>

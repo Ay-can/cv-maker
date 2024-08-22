@@ -80,7 +80,13 @@ function EducationForm({
             onChange={handleEducationForm}
           />
         </form>
-        <button type="button" onClick={addStudy}>
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            addStudy();
+          }}
+        >
           Add
         </button>
       </div>

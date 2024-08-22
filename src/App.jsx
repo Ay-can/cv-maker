@@ -212,10 +212,19 @@ function App() {
 
   return (
     <>
-      <header>
+      <header className="navbar-header">
         <div className="header-container">
           <h1>Cv-Maker</h1>
           <h3>Click on the resume to edit/delete fields!</h3>
+          <p>
+            Created By{" "}
+            <a
+              target="_blank noreferrer noopener"
+              href="https://www.github.com/Ay-can/cv-maker"
+            >
+              Ay-can
+            </a>
+          </p>
         </div>
       </header>
       <main>

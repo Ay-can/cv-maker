@@ -4,6 +4,7 @@
   grid-column: 2;
   padding: 32px;
   height: 1200px;
+  background-color: #eeeeee;
 }
 
 .contact-info > * {
