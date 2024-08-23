@@ -78,6 +78,7 @@ function ProjectForm({
             e.stopPropagation();
             saveProjects();
           }}
+          className="form-btn"
         >
           Save
         </button>

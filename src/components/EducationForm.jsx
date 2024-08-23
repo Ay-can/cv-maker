@@ -86,6 +86,7 @@ function EducationForm({
             e.stopPropagation();
             addStudy();
           }}
+          className="form-btn"
         >
           Add
         </button>

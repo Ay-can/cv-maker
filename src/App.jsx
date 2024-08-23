@@ -23,30 +23,12 @@ function App() {
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, alias repellat eos modi commodi nihil illum accusantium incidunt esse porro!",
     },
-    {
-      id: 2,
-      company: "Google",
-      position: "Software Engineer",
-      startDate: "12-03-2024",
-      endDate: "present",
-      location: "Zurich",
-      description:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint, omnis. At, illum. Dignissimos nam ea aperiam voluptate accusantium culpa eaque!",
-    },
   ]);
 
   const [studies, setStudies] = useState([
     {
       id: 1,
       school: "Harvard University",
-      degree: "Computer Science",
-      startYear: 2020,
-      endYear: 2024,
-      location: "Massachusetts",
-    },
-    {
-      id: 2,
-      school: "MIT",
       degree: "Computer Science",
       startYear: 2020,
       endYear: 2024,
@@ -216,15 +198,6 @@ function App() {
         <div className="header-container">
           <h1>Cv-Maker</h1>
           <h3>Click on the resume to edit/delete fields!</h3>
-          <p>
-            Created By{" "}
-            <a
-              target="_blank noreferrer noopener"
-              href="https://www.github.com/Ay-can/cv-maker"
-            >
-              Ay-can
-            </a>
-          </p>
         </div>
       </header>
       <main>
@@ -278,6 +251,17 @@ function App() {
           </Resume>
         </div>
       </main>
+      <footer>
+        <p>
+          Created By{" "}
+          <a
+            target="_blank noopener noreferrer"
+            href="https://www.github.com/Ay-can"
+          >
+            Ay-can
+          </a>
+        </p>
+      </footer>
     </>
   );
 }
