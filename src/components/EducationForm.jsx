@@ -36,11 +36,11 @@ function EducationForm({
     <div className="education-container">
       <div className="card" onClick={handleFormToggles}>
         <div className="header-toggle">
-          <h2>Add Education</h2>
+          <h2 style={{ color: "#C03747" }}>Add Education</h2>
           <Icon
             path={mdiArrowDownBoldOutline}
             size={1.5}
-            style={{ color: "white", position: "relative", top: "4px" }}
+            style={{ color: "#c03747", position: "relative", top: "4px" }}
           />
         </div>
         <form action="" onClick={(e) => e.stopPropagation()}>

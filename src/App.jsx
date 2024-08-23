@@ -197,7 +197,10 @@ function App() {
       <header className="navbar-header">
         <div className="header-container">
           <h1>Cv-Maker</h1>
-          <h3>Click on the resume to edit/delete fields!</h3>
+          <h3>
+            Click on the resume to{" "}
+            <span className="hightlight">edit/delete</span> fields!
+          </h3>
         </div>
       </header>
       <main>

@@ -35,11 +35,11 @@ function ProjectForm({
     <div className="projects-container">
       <div className="card" onClick={() => updateFormToggles("projects")}>
         <div className="header-toggle">
-          <h2>Add Projects</h2>
+          <h2 style={{ color: "#C03747" }}>Add Projects</h2>
           <Icon
             path={mdiArrowDownBoldOutline}
             size={1.5}
-            style={{ color: "white" }}
+            style={{ color: "#c03747" }}
           />
         </div>
         <form action="" id="project-form" onClick={(e) => e.stopPropagation()}>

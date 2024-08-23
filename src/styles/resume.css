@@ -5,6 +5,7 @@
   padding: 32px;
   height: 1200px;
   background-color: #ffffff;
+  border: 6px solid var(--primary-red-clr);
 }
 
 .contact-info > * {
