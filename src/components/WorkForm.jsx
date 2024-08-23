@@ -2,14 +2,16 @@ import "../styles/work.css";
 
 import Icon from "@mdi/react";
 import { mdiArrowDownBoldOutline } from "@mdi/js";
+import { useRef } from "react";
 
 function WorkForm({
-  work,
   handleWorkForm,
   handleClick,
   formToggles,
   updateFormToggles,
 }) {
+  const formRef = useRef(null);
+
   if (!formToggles.work) {
     return (
       <>
@@ -43,13 +45,14 @@ function WorkForm({
             style={{ color: "#c03747", position: "relative", top: "4px" }}
           />
         </div>
-        <form action="" onClick={(e) => e.stopPropagation()}>
+        <form action="" onClick={(e) => e.stopPropagation()} ref={formRef}>
           <label htmlFor="company">Company</label>
           <input
             type="text"
             name="company"
             id="company"
             onChange={handleWorkForm}
+            required
           />
           <label htmlFor="position">Position</label>
           <input
@@ -57,20 +60,24 @@ function WorkForm({
             name="position"
             id="position"
             onChange={handleWorkForm}
+            required
           />
           <label htmlFor="start-date">Start Date</label>
           <input
-            type="text"
+            type="date"
+            min="2000-01-01"
             name="start-date"
             id="start-date"
             onChange={handleWorkForm}
+            required
           />
           <label htmlFor="end-date">End Date</label>
           <input
-            type="text"
-            name="end-date"
+            type="date"
+            min="2000-01-01"
             id="end-date"
             onChange={handleWorkForm}
+            required
           />
           <label htmlFor="location">Location</label>
           <input
@@ -78,6 +85,7 @@ function WorkForm({
             name="location"
             id="location"
             onChange={handleWorkForm}
+            required
           />
           <label htmlFor="description">Description</label>
           <input
@@ -85,13 +93,19 @@ function WorkForm({
             name="description"
             id="description"
             onChange={handleWorkForm}
+            required
           />
         </form>
         <button
           type="button"
           onClick={(e) => {
-            e.stopPropagation();
-            handleClick();
+            if (formRef.current.checkValidity()) {
+              e.stopPropagation();
+              handleClick();
+            } else {
+              formRef.current.reportValidity();
+              e.stopPropagation();
+            }
           }}
           className="form-btn"
         >

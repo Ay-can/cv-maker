@@ -2,6 +2,7 @@ import "../styles/education.css";
 
 import Icon from "@mdi/react";
 import { mdiArrowDownBoldOutline } from "@mdi/js";
+import { useRef } from "react";
 
 function EducationForm({
   handleEducationForm,
@@ -12,6 +13,8 @@ function EducationForm({
   const handleFormToggles = () => {
     updateFormToggles("education");
   };
+
+  const formRef = useRef(null);
 
   if (!formToggles.education) {
     return (
@@ -43,13 +46,14 @@ function EducationForm({
             style={{ color: "#c03747", position: "relative", top: "4px" }}
           />
         </div>
-        <form action="" onClick={(e) => e.stopPropagation()}>
+        <form action="" onClick={(e) => e.stopPropagation()} ref={formRef}>
           <label htmlFor="school">School</label>
           <input
             type="text"
             name="school"
             id="school"
             onChange={handleEducationForm}
+            required
           />
           <label htmlFor="degree">Degree</label>
           <input
@@ -57,20 +61,25 @@ function EducationForm({
             name="degree"
             id="degree"
             onChange={handleEducationForm}
+            required
           />
           <label htmlFor="start-date">Start Date</label>
           <input
-            type="num"
+            type="date"
+            min="2000-01-01"
             name="start-year"
             id="start-year"
             onChange={handleEducationForm}
+            required
           />
           <label htmlFor="start-date">End Date</label>
           <input
-            type="num"
+            type="date"
+            min="2000-01-01"
             name="end-year"
             id="end-year"
             onChange={handleEducationForm}
+            required
           />
           <label htmlFor="location">Location</label>
           <input
@@ -78,13 +87,19 @@ function EducationForm({
             name="location"
             id="location"
             onChange={handleEducationForm}
+            required
           />
         </form>
         <button
           type="button"
           onClick={(e) => {
-            e.stopPropagation();
-            addStudy();
+            if (formRef.current.checkValidity()) {
+              e.stopPropagation();
+              addStudy();
+            } else {
+              formRef.current.reportValidity();
+              e.stopPropagation();
+            }
           }}
           className="form-btn"
         >

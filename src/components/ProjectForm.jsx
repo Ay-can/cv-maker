@@ -2,6 +2,7 @@ import "../styles/project.css";
 
 import Icon from "@mdi/react";
 import { mdiArrowDownBoldOutline } from "@mdi/js";
+import { useRef } from "react";
 
 function ProjectForm({
   handleProjectForm,
@@ -9,6 +10,8 @@ function ProjectForm({
   formToggles,
   updateFormToggles,
 }) {
+  const formRef = useRef(null);
+
   if (!formToggles.projects) {
     return (
       <>
@@ -42,13 +45,19 @@ function ProjectForm({
             style={{ color: "#c03747" }}
           />
         </div>
-        <form action="" id="project-form" onClick={(e) => e.stopPropagation()}>
+        <form
+          action=""
+          id="project-form"
+          onClick={(e) => e.stopPropagation()}
+          ref={formRef}
+        >
           <label htmlFor="name">Name</label>
           <input
             type="text"
             name="name"
             id="name"
             onChange={handleProjectForm}
+            required
           />
           <label htmlFor="link">Link</label>
           <input
@@ -56,6 +65,7 @@ function ProjectForm({
             name="link"
             id="link"
             onChange={handleProjectForm}
+            required
           />
           <label htmlFor="stack">Stack</label>
           <input
@@ -63,6 +73,7 @@ function ProjectForm({
             name="stack"
             id="stack"
             onChange={handleProjectForm}
+            required
           />
           <label htmlFor="description">Description</label>
           <textarea
@@ -70,13 +81,19 @@ function ProjectForm({
             id="description"
             onChange={handleProjectForm}
             form="project-form"
+            required
           ></textarea>
         </form>
         <button
           type="button"
           onClick={(e) => {
-            e.stopPropagation();
-            saveProjects();
+            if (formRef.current.checkValidity()) {
+              e.stopPropagation();
+              saveProjects();
+            } else {
+              formRef.current.reportValidity();
+              e.stopPropagation();
+            }
           }}
           className="form-btn"
         >

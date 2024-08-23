@@ -46,7 +46,7 @@ function EducationSection({ studies, updateStudy, deleteStudy }) {
                   suppressContentEditableWarning
                   onBlur={(e) => handleInput(e, study.id, "startYear")}
                 >
-                  {study.startYear}
+                  {study["start-year"]}
                 </p>
                 <p className="seperator">-</p>
                 <p
@@ -54,7 +54,7 @@ function EducationSection({ studies, updateStudy, deleteStudy }) {
                   suppressContentEditableWarning
                   onBlur={(e) => handleInput(e, study.id, "endYear")}
                 >
-                  {study.endYear}
+                  {study["end-year"]}
                 </p>
                 <p className="seperator">|</p>
                 <p
