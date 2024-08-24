@@ -75,6 +75,7 @@ function WorkForm({
           <input
             type="date"
             min="2000-01-01"
+            name="end-date"
             id="end-date"
             onChange={handleWorkForm}
             required
@@ -109,7 +110,7 @@ function WorkForm({
           }}
           className="form-btn"
         >
-          Save
+          Add
         </button>
       </div>
     </div>

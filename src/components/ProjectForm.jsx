@@ -97,7 +97,7 @@ function ProjectForm({
           }}
           className="form-btn"
         >
-          Save
+          Add
         </button>
       </div>
     </div>

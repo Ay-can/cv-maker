@@ -11,14 +11,16 @@ import ProjectForm from "./components/ProjectForm";
 import ProjectSection from "./components/ProjectSection";
 import PersonalInfoSection from "./components/PersonalInfoSection";
 
+import { parse } from "date-fns";
+
 function App() {
   const [workExperiences, setWorkExperiences] = useState([
     {
       id: 1,
       company: "Google",
       position: "Software Engineer",
-      startDate: "12-03-2024",
-      endDate: "present",
+      "start-date": "2024-03-12",
+      "end-date": "present",
       location: "Zurich",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, alias repellat eos modi commodi nihil illum accusantium incidunt esse porro!",
@@ -30,8 +32,8 @@ function App() {
       id: 1,
       school: "Harvard University",
       degree: "Computer Science",
-      startYear: 2020,
-      endYear: 2024,
+      "start-year": 2020,
+      "end-year": 2024,
       location: "Massachusetts",
     },
   ]);
@@ -99,20 +101,20 @@ function App() {
     databases: "Mysql, Mysqlserver, Postgresql",
   });
 
-  const handlePersonForm = (e) => {
-    setPerson({ ...person, [e.target.name]: e.target.value });
-  };
-
   const handleEducationForm = (e) => {
-    setEducation({ ...education, [e.target.name]: e.target.value });
+    if (e.target.name === "start-year" || e.target.name === "end-year") {
+      let parsedDate = parse(e.target.value, "yyyy-MM-dd", new Date());
+      setEducation({
+        ...education,
+        [e.target.name]: parsedDate.getUTCFullYear(),
+      });
+    } else {
+      setEducation({ ...education, [e.target.name]: e.target.value });
+    }
   };
 
   const handleWorkForm = (e) => {
     setWork({ ...work, [e.target.name]: e.target.value });
-  };
-
-  const handleSkillsForm = (e) => {
-    setSkillsForm({ ...skillsForm, [e.target.name]: e.target.value });
   };
 
   const handleProjectForm = (e) => {

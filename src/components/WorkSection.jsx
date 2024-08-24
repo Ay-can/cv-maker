@@ -49,7 +49,7 @@ function WorkSection({
                       suppressContentEditableWarning
                       onBlur={(e) => handleInput(e, experience.id, "startDate")}
                     >
-                      {experience.startDate}
+                      {experience["start-date"]}
                     </p>
                     <p className="seperator"> - </p>
                     <p
@@ -57,7 +57,7 @@ function WorkSection({
                       suppressContentEditableWarning
                       onBlur={(e) => handleInput(e, experience.id, "endDate")}
                     >
-                      {experience.endDate}
+                      {experience["end-date"]}
                     </p>
                     <p className="seperator"> | </p>
                     <p
