@@ -11,7 +11,7 @@ import ProjectForm from "./components/ProjectForm";
 import ProjectSection from "./components/ProjectSection";
 import PersonalInfoSection from "./components/PersonalInfoSection";
 
-import { parse } from "date-fns";
+import { parse, format } from "date-fns";
 
 function App() {
   const [workExperiences, setWorkExperiences] = useState([
@@ -19,7 +19,7 @@ function App() {
       id: 1,
       company: "Google",
       position: "Software Engineer",
-      "start-date": "2024-03-12",
+      "start-date": "Augst 20th, 2024",
       "end-date": "present",
       location: "Zurich",
       description:
@@ -37,6 +37,57 @@ function App() {
       location: "Massachusetts",
     },
   ]);
+
+  const [projects, setProjects] = useState([
+    {
+      id: crypto.randomUUID(),
+      name: "Cv-maker",
+      link: "github.com/ay-can/cv-maker",
+      stack: "reactjs",
+      description: "A fun little project to learn more about react",
+    },
+  ]);
+
+  const [skillsForm, setSkillsForm] = useState({
+    "programming-languages": "Javascript, Go, Python, Html/Css",
+    "libraries-frameworks": "Reactjs, Webpack, Asp.net Core, Django",
+    "tools-platforms": "Git, Bash, Linux, Vim",
+    databases: "Mysql, Mysqlserver, Postgresql",
+  });
+
+  const [person, setPerson] = useState({
+    fullname: "John",
+    career: "Software Engineer",
+    email: "demo@gmail.com",
+    phone: "0512312311",
+    address: "Amsterdam",
+  });
+
+  const [education, setEducation] = useState({
+    school: "Harvard University",
+    degree: "Computer Science",
+    startYear: 2020,
+    endYear: 2024,
+    location: "Massachusetts",
+  });
+
+  const [work, setWork] = useState({
+    company: "Google",
+    position: "Software Engineer",
+    "start-date": "12-03-2024",
+    "end-date": "present",
+    location: "Zurich",
+    description:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore fugit magnam laudantium omnis similique iure harum velit at quas aperiam.",
+  });
+
+  const [projectForm, setProjectForm] = useState({
+    name: "Cv-maker",
+    link: "github.com/ay-can/cv-maker",
+    stack: "reactjs",
+    description:
+      "A fun little project first react project to learn about components, state, props and much more",
+  });
 
   const updateStudy = (studyId, field, value) => {
     setStudies((prevStudies) =>
@@ -84,24 +135,8 @@ function App() {
     );
   };
 
-  const [projects, setProjects] = useState([
-    {
-      id: crypto.randomUUID(),
-      name: "Cv-maker",
-      link: "github.com/ay-can/cv-maker",
-      stack: "reactjs",
-      description: "A fun little project to learn more about react",
-    },
-  ]);
-
-  const [skillsForm, setSkillsForm] = useState({
-    "programming-languages": "Javascript, Go, Python, Html/Css",
-    "libraries-frameworks": "Reactjs, Webpack, Asp.net Core, Django",
-    "tools-platforms": "Git, Bash, Linux, Vim",
-    databases: "Mysql, Mysqlserver, Postgresql",
-  });
-
   const handleEducationForm = (e) => {
+    // only use the year when adding a education
     if (e.target.name === "start-year" || e.target.name === "end-year") {
       let parsedDate = parse(e.target.value, "yyyy-MM-dd", new Date());
       setEducation({
@@ -114,7 +149,13 @@ function App() {
   };
 
   const handleWorkForm = (e) => {
-    setWork({ ...work, [e.target.name]: e.target.value });
+    // only use month and year when adding work
+    if (e.target.name === "start-date" || e.target.name === "end-date") {
+      let parsedDate = parse(e.target.value, "yyyy-MM-dd", new Date());
+      setWork({ ...work, [e.target.name]: format(parsedDate, "PPP") });
+    } else {
+      setWork({ ...work, [e.target.name]: e.target.value });
+    }
   };
 
   const handleProjectForm = (e) => {
@@ -144,40 +185,6 @@ function App() {
     setSkillsForm({ ...skillsForm, [field]: value });
   };
 
-  const [projectForm, setProjectForm] = useState({
-    name: "Cv-maker",
-    link: "github.com/ay-can/cv-maker",
-    stack: "reactjs",
-    description:
-      "A fun little project first react project to learn about components, state, props and much more",
-  });
-
-  const [person, setPerson] = useState({
-    fullname: "John",
-    career: "Software Engineer",
-    email: "demo@gmail.com",
-    phone: "0512312311",
-    address: "Amsterdam",
-  });
-
-  const [education, setEducation] = useState({
-    school: "Harvard University",
-    degree: "Computer Science",
-    startYear: 2020,
-    endYear: 2024,
-    location: "Massachusetts",
-  });
-
-  const [work, setWork] = useState({
-    company: "Google",
-    position: "Software Engineer",
-    "start-date": "12-03-2024",
-    "end-date": "present",
-    location: "Zurich",
-    description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore fugit magnam laudantium omnis similique iure harum velit at quas aperiam.",
-  });
-
   // This keeps the state of the form card toggles
   // at first only toggle the personalInfo card and change state when user toggles
   const [formToggles, setFormToggles] = useState({
@@ -202,6 +209,7 @@ function App() {
           <h3>Click on the resume to edit/remove items!</h3>
         </div>
       </header>
+
       <main>
         <div className="form-section">
           <EducationForm

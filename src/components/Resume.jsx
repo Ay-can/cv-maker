@@ -1,6 +1,6 @@
 import "../styles/resume.css";
 
-function Resume({ person, children }) {
+function Resume({ children }) {
   return <div className="resume-container">{children}</div>;
 }
 
